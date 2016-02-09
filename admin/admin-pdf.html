@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+		<title>Portafolio Digital</title>
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/main.css">
+		<link rel="stylesheet" type="text/css" href="css/admin.css">
+		<link rel="stylesheet" type="text/css" href="../fonts/fonts.css">
+		<script src="../js/jquery-1.11.2.min.js"></script>		
+		<script src="../js/bootstrap.min.js"></script>
+		<script src="../js/parse.min.js"></script>
+		<script src="js/admin.js"></script>
+	</head>
+	<body onload="verifySession(1)">
+		<header>
+			<div id="top-blue-line"></div>			
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12 col-xs-12">
+						<div id="logo"><img src="../img/logo.png" style="max-height:40px;"></div>
+						<div id="portal-name"><i>Portafolio Digital</i></div>
+						<div id="btn-menu-mob">&#9776;</div>
+					</div>
+				</div>
+			</div>
+		</header>		
+  		<nav>
+	        <div class="container">
+	          <div id="navbar">
+	            <ul class="navli">
+	              <a href="consola.html"><li id="li-inicio">&nbsp;<span id="txt-mob-incio">Inicio<span></li></a>
+	              <li id="li-adm-pdf" class="adm-pdf-sel">Administrar PDFs</li>
+	              <a href="admin-news.html"><li id="li-adm">Noticias</li></a>
+	              <li id="li-adm-logout">Cerrar sesión</li>
+	              <li id="logo-slim-mob"></li>
+	            </ul>
+	          </div>
+	        </div>    	
+		</nav>
+		<section id="admin-pdf" class="container-fluid">
+			<div class="row">
+				<div class="col-md-11 col-md-offset-1 col-sm-12" >
+					<h3>Listado de PDF's</h3>
+				</div>
+				<div class="col-md-2 col-md-offset-1 col-sm-12">
+					<div id="btn-new-pdf" class="btn btn-success">Crear Nuevo</div>
+				</div>
+				<div class="col-md-10 col-md-offset-1 col-sm-12" >
+					<div class="user-response" id="pdf-responses" ></div>
+					<table id="table-pdf" class="table table-striped">
+						
+					</table>
+					<div id="load-list-pdf" class="loading-charge"></div>
+					<div id="cont-pdf-pager"></div>
+				</div>
+				<div id="cont-edit-pdf" class="col-md-10 col-md-offset-1 col-sm-12">
+					<div class="row" >
+						<div class="col-md-8 col-md-offset-2 col-sm-12">
+							<h3>Editar PDF</h3>
+						</div>
+						<form method="POST" id="edit-pdf-form">
+						<div class="col-md-5 col-md-offset-1" >
+							<div class="form-group">
+								<label for="pdf-name">Nombre</label>
+								<input type="text" class="form-control" id="pdf-name" placeholder="Nombre del PDF">
+							</div>
+							<div class="form-group">
+								<label for="pdf-desc">Descripcion</label>
+								<textarea rows="5" class="form-control" id="pdf-desc"></textarea>
+							</div>
+							<div class="form-group">
+								<label for="pdf-category">Categoria</label>
+								<select class="form-control" id="pdf-category">
+									<option value="-1">Seleccione una categoría</option>
+								</select>
+							</div>
+							<div class="form-group">
+								<label for="pdf-subcat">Subcategoría</label>
+								<select class="form-control" id="pdf-subcat">
+									<option value="-1">Selecciona una subcategoría</option>
+								</select>
+  							</div>
+						</div>
+						<div class="col-md-5">
+							<div class="form-group">
+								<label for="pdf-keywords">Keywords</label>
+								<input type="text" class="form-control" id="pdf-keywords" placeholder="palabras clave">
+  							</div>
+							<div id="pdf-img-group" class="form-group">
+								<label for="pdf-image">Keywords</label>
+								<div id="prev-img-pdf" class="img-thumb-pdf">
+
+	  							</div>
+	  							<div class="btn-replace-img">
+	  								<span>Remplazar</span>
+	    							<input type="file" class="file-hidden-img" id="pdf-image">
+									<input type="hidden" id="pdf-media-ob1">
+									<input type="hidden" id="media-obj1">
+	  							</div>
+  							</div>
+  							<div id="pdf-file-group" class="form-group">
+	    						<span class="label-file">Archivo</span>
+	  							<div class="file-pdf-icon">
+	  							</div>
+	  							<div id="link-pdf-file">
+
+	  							</div>  							
+	  							<div class="replace-pdf-file">
+	  								<span>Remplazar</span>
+	    							<input type="file" class="file-hidden-pdf" id="pdf-file">
+									<input type="hidden" id="pdf-media-ob2">
+									<input type="hidden" id="media-obj2">
+	  							</div>
+  							</div>
+  							<button type="button" id="btn-edit-pdf" class="btn btn-success" >Editar</button>
+  							<button type="submit" id="btn-submit-pdf" class="btn btn-primary" disabled>Guardar</button>
+  							<button type="button" id="btn-cancelar-pdf" class="btn btn-danger" >Cancelar</button>
+						</div>
+						</form>
+					</div>
+					<div class="col-md-4">
+  						<div class="user-response" id="editpdf-response" ></div>
+					</div>
+					<div id="load-edit-pdf" class="loading-charge-min"></div>
+				</div>
+				<div id="cont-new-pdf" class="col-md-10 col-md-offset-1">
+					<div class="row" >
+						<div class="col-md-8 col-md-offset-2">
+							<h3>Nuevo PDF</h3>
+						</div>
+						<form method="POST" id="new-pdf-form">
+						<div class="col-md-5 col-md-offset-1" >
+							<div class="form-group">
+								<label for="new-pdf-name">Nombre</label>
+								<input type="text" class="form-control" id="new-pdf-name" placeholder="Nombre del PDF">
+							</div>
+							<div  class="form-group">
+								<label for="new-pdf-desc">Descripcion</label>
+								<textarea rows="5" class="form-control" id="new-pdf-desc"></textarea>
+							</div>
+							<div class="form-group">
+								<label for="new-pdf-category">Categoria</label>
+								<select class="form-control" id="new-pdf-category">
+									<option value="-1">Seleccione una categoría</option>
+								</select>
+							</div>
+							<div class="form-group">
+								<label for="new-pdf-subcat">Subcategoría</label>
+								<select class="form-control" id="new-pdf-subcat">
+									<option value="-1">Selecciona una subcategoría</option>
+								</select>
+  							</div>
+						</div>
+						<div class="col-md-5">
+							<div class="form-group">
+								<label for="new-pdf-keywords">Keywords</label>
+								<input type="text" class="form-control" id="new-pdf-keywords" placeholder="palabras clave">
+  							</div>
+  							<div id="pdf-img-group" class="form-group">
+								<label for="new-pdf-image">Keywords</label>
+								<div id="new-img-pdf" class="img-thumb-pdf">
+
+	  							</div>
+	  							<div class="btn-replace-img">
+	  								<span>Examinar...</span>
+	    							<input type="file" class="file-hidden-img" id="new-pdf-image">
+	  							</div>
+  							</div>
+  							<div id="pdf-file-group" class="form-group">
+	    						<label for="new-pdf-file">Archivo</label>
+	  							<div class="file-pdf-icon">
+	  							</div>
+	  							<div id="name-pdf-file">
+
+	  							</div>
+	  							<div class="replace-pdf-file">
+	  								<span>Examinar...</span>
+	    							<input type="file" class="file-hidden-pdf" id="new-pdf-file">
+	  							</div>
+  							</div>
+  							<button type="submit" id="btn-sub-npdf"class="btn btn-primary">Guardar</button>
+  							<button type="button" id="btn-cancel-npdf" class="btn btn-danger">Cancelar</button>
+						</div>
+						</form>
+					</div>
+					<div class="col-md-4">
+  						<div class="user-response" id="newpdf-response" ></div>
+					</div>
+					<div id="load-new-pdf" class="loading-charge-min"></div>
+				</div>
+			</div>
+		</section>
+		<footer>
+			<div  class="container">
+				<div id="aviso-priv"><img style="max-width:22px;" src="../img/aviso.png">&nbsp;Aviso de privacidad</div>
+				<div id="logo-foot"><img src="../img/logo-black.png"></div>
+				<div id="logo-foot-mob"><img src="../img/logo-black.png"></div>
+			</div>
+		</footer>
+		<div class="bottom-line-right">
+  		 	Aviso de privacidad
+		</div>
+		<div class="bottom-line">
+			Instituto Carlos Slim de la Salud
+		</div>
+	</body>
+</html>

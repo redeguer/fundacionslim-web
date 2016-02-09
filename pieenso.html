@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+		<title>Portafolio Digital</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="fonts/fonts.css">
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<link rel="stylesheet" type="text/css" href="css/calculator.css">
+		<link rel="stylesheet" type="text/css" href="css/style_common.css" />
+    	<link rel="stylesheet" type="text/css" href="css/style5.css" />
+
+    	<link rel="stylesheet" type="text/css" href="css/fancyBox.css" />
+		<link rel="stylesheet" type="text/css" href="css/fancybox-buttons.css" />
+		<link rel='stylesheet' id='me-player-css'  href='css/mediaelementplayer.css' type='text/css' media='screen' />
+		<link type="text/css" rel="stylesheet" href="css/popModal.css">
+		
+		<style type="text/css">
+		/* this demo specific styles */
+		.fancybox-nav { width: 60px; }
+		.fancybox-nav span { visibility: visible; opacity: 0.5;}
+		.fancybox-nav:hover span {opacity: 1;}
+		.fancybox-next { right: -60px;}
+		.fancybox-prev { left: -60px;}
+		.fancybox-title-over-wrap {  top: 0;  left: 0;  bottom: auto;  position: absolute;  width: 100%;  z-index: 8035;}
+		#wrap ul {padding-left: 20px; font-size: 12px;}
+		#videolist {list-style-type: none; padding: 0;}
+		#videolist li {float: left;}
+		.fancy_video {position: relative;  display: block; margin: 10px 20px; z-index:1}
+		.fancy_video img {cursor:pointer; text-decoration: none; /* margin: 10px 20px;*/ padding: 5px; border: solid 1px #dedede; background-color: #f8f8f8; }
+		.fancy_video:hover img {background-color: #e8e8e8;}
+		.fancy_video:hover .playbutton {opacity: 0.7}
+		.playbutton {  background: transparent url("http://www.picssel.com/scripts/mediaelement/bigplay.png") no-repeat;  display: block;  height: 100px;  left: 31px;  opacity: 0.4;  overflow: hidden;  position: absolute;  top: 31px;  width: 100px;  z-index: 10;  cursor: pointer;}
+		</style>
+
+    
+		<script src="js/jquery-1.11.2.min.js"></script>		
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/popModal.js"></script>
+		<script src="js/fancybox.pack.js"></script>
+		<script src="js/jquery.fancybox-buttons.js"></script>
+		<script src='js/mediaelement-and-player.js'></script>
+<script>
+	// Detecting IE more effectively : http://msdn.microsoft.com/en-us/library/ms537509.aspx
+function getInternetExplorerVersion() {
+    // Returns the version of Internet Explorer or -1 (other browser)
+    var rv = -1; // Return value assumes failure.
+    if (navigator.appName == 'Microsoft Internet Explorer') {
+        var ua = navigator.userAgent;
+        var re = new RegExp("MSIE ([0-9]{1,}[\.0-9]{0,})");
+        if (re.exec(ua) != null)
+            rv = parseFloat(RegExp.$1);
+    };
+    return rv;
+};
+// set some general variables
+var $video_player, _videoHref, _videoPoster, _videoWidth, _videoHeight, _dataCaption, _player, _isPlaying = false, _verIE = getInternetExplorerVersion();
+jQuery(document).ready(function ($) {  
+    jQuery(".fancy_video")
+    .prepend("<span class=\"playbutton\"/>") //cosmetic : append a play button image
+    .fancybox({
+        // set type of content (remember, we are building the HTML5 <video> tag as content)
+        type       : "html",
+        // other API options
+        scrolling  : "no",
+        padding    : 0,
+        nextEffect : "fade",
+        prevEffect : "fade",
+        nextSpeed  : 0,
+        prevSpeed  : 0,
+        fitToView  : false,
+        autoSize   : false,
+        modal      : true, // hide default close and navigation buttons
+        helpers    : {
+            title  : {
+                type : "over"
+            },
+            buttons: {} // use buttons helpers so navigation button won't overlap video controls
+        },
+        beforeLoad : function () {
+            // if video is playing and we navigate to next/prev element of a fancyBox gallery
+            // safely remove Flash objects in IE
+            if (_isPlaying && (_verIE > -1)) {
+                // video is playing AND we are using IE
+                _verIE < 9.0 ? _player.remove() : $video_player.remove(); // remove player instance for IE
+                _isPlaying = false; // reinitialize flag
+            };
+            // build the HTML5 video structure for fancyBox content with specific parameters
+            _videoHref   = this.href;
+            // validates if data values were passed otherwise set defaults
+            _videoPoster = typeof this.element.data("poster")  !== "undefined" ? this.element.data("poster")  :  "";
+            _videoWidth  = typeof this.element.data("width")   !== "undefined" ? this.element.data("width")   : 360;
+            _videoHeight = typeof this.element.data("height")  !== "undefined" ? this.element.data("height")  : 360;
+            _dataCaption = typeof this.element.data("caption") !== "undefined" ? this.element.data("caption") :  "";
+            // construct fancyBox title (optional)
+            this.title = _dataCaption ? _dataCaption : (this.title ? this.title : "");
+            // set fancyBox content and pass parameters
+            this.content = "<video id='video_player' src='" + _videoHref + "'  poster='" + _videoPoster + "' width='" + _videoWidth + "' height='" + _videoHeight + "'  controls='controls' preload='none' ></video>";
+            // set fancyBox dimensions
+            this.width = _videoWidth;
+            this.height = _videoHeight;
+        },
+        afterShow : function () {
+            // initialize MEJS player
+            var $video_player = new MediaElementPlayer('#video_player', {
+                    defaultVideoWidth : this.width,
+                    defaultVideoHeight : this.height,
+                    success : function (mediaElement, domObject) {
+                        _player = mediaElement; // override the "mediaElement" instance to be used outside the success setting
+                        _player.load(); // fixes webkit firing any method before player is ready
+                        _player.play(); // autoplay video (optional)
+                        _player.addEventListener('playing', function () {
+                            _isPlaying = true;
+                        }, false);
+                    } // success
+                });
+        },
+        beforeClose : function () {
+            // if video is playing and we close fancyBox
+            // safely remove Flash objects in IE
+            if (_isPlaying && (_verIE > -1)) {
+                // video is playing AND we are using IE
+                _verIE < 9.0 ? _player.remove() : $video_player.remove(); // remove player instance for IE
+                _isPlaying = false; // reinitialize flag
+            };
+        }
+    });
+}); // ready
+</script>
+
+
+
+
+
+ 
+
+
+
+
+
+		<script src="js/main.js"></script>
+		
+	</head>
+	<body>
+		<header>
+   		</header>
+   		<div data-scroll-index="0" style="height:10px"></div>	
+  		<nav>
+    	</nav>
+	    <section id="nav-menu">
+	    </section>	
+	     <section id="menu_mobil">
+		</section>
+	    <script type="text/javascript">
+	      header();
+	      menu_noticias();
+	    </script>
+	    <div id="cuadro-login" style="margin-top: 10px !important;">
+	      <img src="img/cerrar.png" id="btn-cerrar-login">
+	      <p class="titulo-registro-index">Inicio de Sesión</p>
+	      <fb:login-button scope="public_profile,email" onlogin="checkLoginState();" size="large">
+	          <span id="overflow">Inicia sesión con</span> facebook
+	        </fb:login-button>
+	          <br><br>
+	          <img src="img/linea.png" class="linea-registro-index"> o <img src="img/linea.png" class="linea-registro-index"> <br>
+	          <p class="seccion-registro-index">
+	            E-mail
+	          </p><br>
+	          <input type="text" name="email" id="email" class="form-registro-index"><br>
+	          <p class="seccion-registro-index">
+	            Contraseña
+	          </p><br>
+	          <input type="password" name="password" id="password" class="form-registro-index"><br>
+	          <a href="#">
+	            <p class="rec-password">
+	              ¿Olvidaste tu contraseña?
+	            </p>
+	          </a>
+	          <img src="img/inicio_sesion.png" class="btn-face-login"> <br> <br><br>
+	          <p class="link-registro">
+	            ¿Aún no tienes cuenta? <a href="#" id="register">Regístrate</a>
+	          </p>
+	    </div>
+	    <div id="cuadro-registro" style="margin-top: 10px !important;">
+	      <img src="img/cerrar.png" id="btn-cerrar-registro">
+	      <p class="titulo-registro-index">Registro</p>
+	          <p class="seccion-registro-index" style="margin-top:-20px">
+	            Nombre
+	          </p><br>
+	          <input type="text" name="email" id="email" class="form-registro-index"><br>
+	          <p class="seccion-registro-index">
+	            E-mail
+	          </p><br>
+	          <input type="text" name="email" id="email" class="form-registro-index"><br>
+	          <p class="seccion-registro-index">
+	            Contraseña
+	          </p><br>
+	          <input type="password" name="password" id="password" class="form-registro-index"><br>
+	          <p class="seccion-registro-index">
+	            Confirma contraseña
+	          </p><br>
+	          <input type="password" name="password" id="password" class="form-registro-index"><br>
+	          <img src="img/cancelar.png" class="btn-registro" id="cancela" style="margin-left: 10px">
+	          <img src="img/aceptar.png" class="btn-registro">
+	    </div>
+	    <div id="send-result-w">
+        	<div class="top-send-res">Compartir Resultados</div>
+        	<div class="form-result-w">
+        		<p class="centered-text">Envía los resultados para recordar a tus pacientes como mejorar sus hábitos y estilo de vida.</p>
+        		<form id="form-send-vacc">
+        			<div class="form-group">
+					    <label for="inputNombreVac">Nombre</label>
+					    <input type="text" class="form-control" id="inputNombreVac" placeholder="Nombre">
+				  	</div>
+				  	<div class="form-group">
+					    <label for="inputEmailVac">Correo</label>
+					    <input type="email" class="form-control" id="inputEmailVac" placeholder="Email">
+				  	</div>
+				  	<button type="submit" id="btn-submit-vacc-kids" class="btn btn-primary">Enviar</button>
+				  	<button type="button" id="calc-cancel-sub" class="btn btn-default">Cancelar</button>
+        		</form>
+        	</div>
+        	<div class="foot-send-res"></div>
+        </div>
+        <div id="send-result-w-teen">
+        	<div class="top-send-res">Compartir Resultados</div>
+        	<div class="form-result-w">
+        		<p class="centered-text">Envía los resultados para recordar a tus pacientes como mejorar sus hábitos y estilo de vida.</p>
+        		<form id="form-send-vacc-teen">
+        			<div class="form-group">
+					    <label for="inputNombreVac">Nombre</label>
+					    <input type="text" class="form-control" id="inputNombreVac-teen" placeholder="Nombre">
+				  	</div>
+				  	<div class="form-group">
+					    <label for="inputEmailVac">Correo</label>
+					    <input type="email" class="form-control" id="inputEmailVac-teen" placeholder="Email">
+				  	</div>
+				  	<button type="submit" id="btn-submit-vacc-kids-teen" class="btn btn-primary">Enviar</button>
+				  	<button type="button" id="calc-cancel-sub-teen" class="btn btn-default">Cancelar</button>
+        		</form>
+        	</div>
+        	<div class="foot-send-res"></div>
+        </div>
+
+       
+
+   
+      
+
+     
+
+  
+ 
+        
+		<section id="pieenso" class="container" style="padding-top:300px;">
+
+				<div class="calculator-result-title" style="padding-bottom:30px;" align="center">PIEENSO en la operación</div>
+				<div style="float:right;" class="hintModal"><div class="hintModal_container">Un compendio de procedimientos más frecuentes que el equipo de salud realiza en sus actividades diarias frente a paciente con el fin de mejorar la calidad en la ejecución de dichos procedimientos. Está respaldada en la opinión y practica de prestigiadas instituciones nacionales e internacionales.</div><img style="width:80%;" src="img/aviso.png"></div>
+				<div class="calculator-result-title" style="padding-bottom:80px;" align="center">Procedimientos mas frecuentes en diabetes</div>
+			
+				<div class="row">
+		            <div class="col-md-4 gridPad down view view1 view-fifth">
+		                <img class="adjustImg" src="img/pieenso/01.jpg" />
+		                <div class="mask">
+		                    <p class="mp4Desc">
+		                    	¿Cómo hacer la correcta medición  de la agudeza visual?
+		                    </p>
+		                    <a style="bottom: 30px;" href="https://www.youtube.com/embed/J2S5nfEW4I8" data-width="480" data-height="480" data-poster="" data-caption="¿Cómo hacer la correcta medición  de la agudeza visual ?" title="¿Cómo hacer la correcta medición  de la agudeza visual?">VER VIDEO</a>
+
+      
+
+		                </div>
+		            </div>
+		            <div class="col-md-4 gridPad down view view2 view-fifth">
+		                <img class="adjustImg" src="img/pieenso/02.jpg" />
+		                <div class="mask">
+		                    <p class="mp4Desc">
+		                    	¿Cómo hacer la correcta exploración del reflejo rojo ocular?
+		                    </p>
+						
+		                    <a style="bottom: 30px;" href="https://www.youtube.com/embed/0DGqG-kgDgc?rel=0" data-width="480" data-height="480" data-poster="" data-caption="¿Cómo hacer la correcta exploración del reflejo rojo ocular?" title="¿Cómo hacer la correcta exploración del reflejo rojo ocular?">VER VIDEO</a>
+		                </div>
+		            </div>
+		            <div class="col-md-4 gridPad down view view3 view-fifth">
+		                <img class="adjustImg" src="img/pieenso/03.jpg" />
+		                <div class="mask">
+		                    <p class="mp4Desc">
+		                    	¿Cómo hacer la correcta exploración bucal?
+		                    </p>
+		                    <a href="https://www.youtube.com/embed/Gq_EorJewiQ" data-width="480" data-height="480" data-poster="" data-caption="¿Cómo hacer la correcta exploración bucal?" title="¿Cómo hacer la correcta exploración bucal?">VER VIDEO</a>
+		                </div>
+		            </div>
+		        </div>
+
+		        <div class="row">
+		            <div class="col-md-4 gridPad down view view4 view-fifth">
+		                <img class="adjustImg" src="img/pieenso/04.jpg" />
+		                <div class="mask">
+		                    <p class="mp4Desc">
+		                    	¿Qué es un plato saludable?
+		                    </p>
+		                    <a href="https://www.youtube.com/embed/_qnveKdzgXQ" data-width="480" data-height="480" data-poster="" data-caption="¿Qué es un plato saludable?" title="¿Qué es un plato saludable?">VER VIDEO</a>
+		                </div>
+		            </div>
+		            <div class="col-md-4 gridPad down view view5 view-fifth">
+		                <img class="adjustImg" src="img/pieenso/05.jpg" />
+		                <div class="mask">
+		                    <p class="mp4Desc">
+		                    	¿Cuál es el tamaño ideal de las porciones?
+		                    </p>
+		                    <a href="https://www.youtube.com/embed/A-iYNWOHG5U" data-width="480" data-height="480" data-poster="" data-caption="¿Cuál es el tamaño ideal de las porciones?" title="¿Cuál es el tamaño ideal de las porciones?">VER VIDEO</a>
+		                </div>
+		            </div>
+		            <div class="col-md-4 gridPad down view view6 view-fifth">
+		                <img class="adjustImg" src="img/pieenso/06.jpg" />
+		                <div class="mask">
+		                    <p class="mp4Desc">
+		                    	¿Cómo fijar la intensidad de la actividad física?
+		                    </p>
+		                    <a href="https://www.youtube.com/embed/V8N56Yyo-78" data-width="480" data-height="480" data-poster="" data-caption="¿Cómo fijar la intensidad de la actividad física?" title="¿Cómo fijar la intensidad de la actividad física?">VER VIDEO</a>
+		                </div>
+		            </div>
+		        </div>
+
+		        <div class="row">
+		            <div class="col-md-4 gridPad down view view4 view-fifth">
+		                <img class="adjustImg" src="img/pieenso/07.jpg" />
+		                <div class="mask">
+		                    <p class="mp4Desc">
+		                    	¿Cómo elegir el calzado adecuado?
+		                    </p>
+		                    <a href="https://www.youtube.com/embed/hGA9cggNtog" data-width="480" data-height="480" data-poster="" data-caption="¿Cómo elegir el calzado adecuado?" title="¿Cómo elegir el calzado adecuado?">VER VIDEO</a>
+		                </div>
+		            </div>
+		            <div class="col-md-4 gridPad down view view5 view-fifth">
+		                <img class="adjustImg" src="img/pieenso/08.jpg" />
+		                <div class="mask">
+		                    <p class="mp4Desc">
+		                    	¿Cómo se prepara y aplica la insulina?
+		                    </p>
+		                    <a href="https://www.youtube.com/embed/GHpPWaHpIPM" data-width="480" data-height="480" data-poster="" data-caption="¿Cómo se prepara y aplica la insulina?" title="¿Cómo se prepara y aplica la insulina?">VER VIDEO</a>
+		                </div>
+		            </div>
+		            <div class="col-md-4 gridPad down view view6 view-fifth">
+		                <img class="adjustImg" src="img/pieenso/09.jpg" />
+		                <div class="mask">
+		                    <p class="mp4Desc">
+		                    	¿Qué hacer en caso de hipoglucemia?
+		                    </p>
+		                    <a href="https://www.youtube.com/embed/CMeIiJT20F" data-width="480" data-height="480" data-poster="" data-caption="¿Qué hacer en caso de hipoglucemia?" title="¿Qué hacer en caso de hipoglucemia?">VER VIDEO</a>
+		                </div>
+		            </div>
+		        </div>
+
+		        <div class="row">
+		            <div class="col-md-4 gridPad down view view4 view-fifth">
+		                <img class="adjustImg" src="img/pieenso/10.jpg" />
+		                <div class="mask">
+		                    <p class="mp4Desc">
+		                    	¿Qué hacer con una persona con diabetes en días de enfermedad concomitante?
+		                    </p>
+		                    <a style="bottom: 30px;" href="https://www.youtube.com/embed/unCO4VNNOE0" data-width="480" data-height="480" data-poster="" data-caption="¿Qué hacer con una persona con diabetes en días de enfermedad concomitante?" title="¿Qué hacer con una persona con diabetes en días de enfermedad concomitante?">VER VIDEO</a>
+		                </div>
+		            </div>
+		            <div class="col-md-4 gridPad down view view5 view-fifth">
+		                <img class="adjustImg" src="img/pieenso/11.jpg" />
+		                <div class="mask">
+		                    <p class="mp4Desc">
+		                    	¿Cómo se realiza la higiene dental en diabetes?
+		                    </p>
+		                    <a href="https://www.youtube.com/embed/Yhc4wiq8mLY" data-width="480" data-height="480" data-poster="" data-caption="¿Cómo se realiza la higiene dental en diabetes?" title="¿Cómo se realiza la higiene dental en diabetes?">VER VIDEO</a>
+		                </div>
+		            </div>
+		            <div class="col-md-4 gridPad down view view6 view-fifth">
+		                
+		            </div>
+		        </div>
+			
+		</section>
+		<div id="prueba"></div>
+	<footer>
+			<div  class="container" style="width:430px; height:50px;">
+                
+				<a href="http://www.fundacioncarlosslim.org/"><div id="logo-foot"><img src="img/logo-black.png"></div></a>
+				<a href="http://www.fundacioncarlosslim.org/"><div id="logo-foot-mob"><img src="img/logo-black.png"></div></a>
+			</div>
+		</footer>
+		<div class="bottom-line-right">
+			<p>Aviso de privacidad</p>
+		</div>
+		<div class="bottom-line">
+			<div id="aviso-priv" onclick="loadPrivacy()"><img style="max-width:22px;" src="img/aviso.png">&nbsp;Aviso de privacidad</div>
+		</div>
+
+		<div id="lowRisk" style="display:none">
+				Actividad física con bajo riesgo
+			</div>
+
+			<div id="highRisk" style="display:none">
+				Actividad física con alto riesgo. Realizar pruebas médicas antes de prescribir actividad física.
+			</div>
+
+			<div id="dialog_content" class="dialog_content" style="display:none;">
+				<div class="dialogModal_header">Descargar ahora <font class="blueModalTitle">Portafolio Digital</font> en el Móvil y USB. Es gratis.</div>
+				<div class="dialogModal_content">
+				<img src="img/downloadAppModal.jpg" style="width:100%;">
+				<a href="https://play.google.com/store/apps/details?id=com.icom.portafoliosalud&hl=es_419" target="_blank"><div style="width: 165px; position: relative; z-index: 50;bottom: 237px;left: 61%;height: 50px;background-color: transparent;cursor: pointer;"></div></a><a href="http://icom-systems.com/portafolio-digital/entrega9Dic/dist_091215.zip" target="_blank"><div style="width: 165px; position: relative; z-index: 50;bottom: 180px;left: 61%;height: 50px;background-color: transparent;cursor: pointer;"></div></a>
+				</div>
+				<!--<div class="dialogModal_footer">
+					<button type="button" class="btn btn-primary" data-dialogmodal-but="next">Next</button>
+					<button type="button" class="btn btn-default" data-dialogmodal-but="cancel">Cancel</button>
+				</div>-->
+			</div>
+
+			<div id="dialog_content2" class="dialog_content2" style="display:none;">
+				<div class="dialogModal_header">Sobre la información de <font class="blueModalTitle">medicamentos</font> en el  <font class="blueModalTitle">VADEMECUN</font>  del Portafolio Digital de la FCS</div>
+				<div class="dialogModal_content" style="margin:10px;">
+					<div style="padding-top:50px;">La FCS establece que las recomendaciones que se proporcionan en esta aplicación son de carácter informativo  y <font class="blueModalTitle">no substituyen</font> de ninguna manera las recomendaciones médicas y/o un especialista en la materia. El uso que se haga de esta aplicación <font class="blueModalTitle">es responsabilidad exclusiva del usuario.</div><div style="padding-top:15px;"></font> La base de datos de medicamentos se actualiza periódicamente con el objeto de recoger las últimas modificaciones y novedades habidas e integradas por parte del equipo proveedor. La FCS no tiene ningún fin comercial por lo que <font class="blueModalTitle">NO recomienda marca</font> alguna.</div>
+					<div align="center" style="padding-top:50px;padding-bottom:50px;"><button onclick="send2vademecum()" class="calc-btn-send">Aceptar</button></div>
+				</div>
+				<!--<div class="dialogModal_footer">
+					<button type="button" class="btn btn-primary" data-dialogmodal-but="next">Next</button>
+					<button type="button" class="btn btn-default" data-dialogmodal-but="cancel">Cancel</button>
+				</div>-->
+			</div>
+
+			<div id="dialog_content3" class="dialog_content3" style="display:none;">
+				<div class="dialogModal_header">AVISO DE PRIVACIDAD</div>
+				<div class="dialogModal_content" style="margin:10px;">
+					<div style="padding-top:50px;">Aviso dirigido a los titulares de datos personales que obran en posesión de la Fundación Carlos Slim, A.C. 
+Fundación Carlos Slim, A.C. (en lo sucesivo la “Fundación”), con domicilio en calle Lago Zurich No. 245, Edificio Presa Falcón, Piso 20, Colonia Granada Ampliación, Delegación Miguel Hidalgo, C.P. 11529, en México, Distrito Federal, hace de su conocimiento que los datos personales de usted, incluyendo los sensibles, que actualmente o en el futuro obren en nuestras bases de datos, serán tratados y/o utilizados por la Iniciativa de capacitación y/o por aquellos terceros que, por la naturaleza de sus trabajos o funciones tengan la necesidad de tratar y/o utilizar sus datos personales; con el propósito de i) cumplir con aquellas obligaciones que se derivan de la relación jurídica existente entre usted como titular de los datos personales y la Iniciativa de capacitación, ii) utilizar y/o tratar sus datos personales con fines estadísticos, iii) utilizar y/o tratar sus datos personales con fines publicitarios y de fomento, promoción y difusión de acciones sociales, iv) difundir, comunicar y/o publicar sus datos personales en cualquier medio de comunicación electrónico, v) utilizar sus datos personales como base de referencia, y vi) enviarle a su domicilio invitaciones a eventos organizados por la Iniciativa de capacitación. 
+La “Fundación” podrá transferir los datos personales que obren en sus bases de datos a terceras personas, nacionales o extranjeras, como pudieran ser de manera enunciativa: Asociaciones Civiles, Instituciones de Asistencia Privada, Organismos Descentralizados, Instituciones de Crédito y Hospitales Públicos y/o Privados, salvo que los titulares respectivos manifiesten expresamente su oposición, en términos de lo dispuesto por la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (la Ley). 
+Los titulares podrán ejercer sus derechos de acceso, rectificación, cancelación u oposición y la revocación del consentimiento a partir del 6 de enero de 2012, mediante el envío de una solicitud a la siguiente dirección electrónica dg@fundacioncarlosslim.org Todas las solicitudes que sean enviadas al Instituto, independiente del medio utilizado por los titulares, deberán: 
+Incluir el nombre del titular y domicilio u otro medio para comunicarle la respuesta a su solicitud. 
+Acompañar los documentos oficiales que acrediten la identidad del titular. 
+Incluir una descripción clara y precisa de los datos personales respecto de los cuales ejercitará los derechos que les confiere la Ley. 
+Incluir cualquier elemento o documento que facilite la localización de los datos personales de que se traten. 
+La “Fundación” tendrá el derecho de cambiar, modificar, complementar y/o alterar el presente aviso, en cualquier momento, en cuyo caso se hará de su conocimiento a través de su publicación en la siguiente página web: fundacioncarlosslim.org
+
+				</div>
+				<!--<div class="dialogModal_footer">
+					<button type="button" class="btn btn-primary" data-dialogmodal-but="next">Next</button>
+					<button type="button" class="btn btn-default" data-dialogmodal-but="cancel">Cancel</button>
+				</div>-->
+			</div>
+
+
+		<script src="js/popModal.js"></script>
+
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		  	ga('create', 'UA-65771429-1', 'auto');
+		  	ga('send', 'pageview');
+		</script>
+	</body>
+	<!-- var tabla=document.getElementById("kids-vacc-table").childNodes;
+
+$('#prueba').html(tabla);
+
+<div id="prueba"></div>
+
+<button onclick="">prueba</button> -->
+</html>

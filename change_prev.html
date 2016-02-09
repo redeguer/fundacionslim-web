@@ -1,0 +1,82 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html, charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Portafolio Digital</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/practicas.css">
+	<link rel="stylesheet" type="text/css" href="fonts/fonts.css">
+	<script src="js/jquery-1.11.2.min.js"></script>		
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/main.js"></script>
+	<style type="text/css">
+		.recu_contra{
+			width: 80%;
+			border: 2px solid black;
+			border-radius: 5px;
+			margin-top: 200px;
+			margin-left: 10%;
+		}
+		.rest_contra{
+			border: 2px solid black;
+			border-radius: 5px;
+			margin-top: 200px;
+			margin-left: 25%;
+		}
+	</style>
+</head>
+<body>
+	<div class="recu_contra" id="recuperar_pass_pre">
+		<h1 id="pre_pass" style="text-align:center">
+			RESTABLECER CONTRASEÑA
+		</h1>
+		<h1 id="post_pass" style="text-align:center;display:none">
+			HECHO! CONFIRMA CON LA LIGA QUE HAS RECIBIDO A TU CORREO!
+		</h1>
+		<br> <br> 
+		<form method="POST" class="container" id="form_prev_contra">
+			<p class="text_change_pass">
+				E-mail:
+			</p>
+			<input type="text" class="input_pass_prev" name="email-prest" id="email-prest" style="width:45%;float:left;">
+			<br>
+			<input class="btn_pass_prev" type='submit' value='Enviar' style='position:relative;float:left;margin-left: 5px; margin-top:-20px;'>
+			
+		</form>
+	</div>
+	<div class="rest_contra" id="recuperar_pass_pos">
+		<h1 id="pre_pass" style="text-align:center">
+			RESTABLECER CONTRASEÑA
+		</h1>
+		<h1 id="post_pass" style="text-align:center;display:none">
+			HECHO! SU CONTRASEÑA HA SIDO CAMBIADA EXITOSAMENTE.
+		</h1>
+		<br> <br> 
+		<form method="POST" class="container" id="form_post_contra">
+			<p class="text_change_pass">
+				E-mail:
+			</p>
+			<input type="text" class="input_pass_prev" name="email-post" id="email-post" style="margin-left:10px;width:35%;float:left;">
+			<br><br><br><br>
+			<p class="text_change_pass1">
+				Contraseña:
+			</p>
+			<input type="password" name="pass" id="pass" style="margin-left:10px;width:35%;float:left;">
+			<br><br><br>
+			<p class="text_change_pass2">
+				Confirma Contraseña:
+			</p>
+			<input type="password" name="confirm_pass" id="confirm_pass" style="margin-left:10px;width:35%;float:left;">
+			<br>
+			<br><br>
+			<input class="btn_pass_prev" type='submit' value='Enviar' style='position:relative;margin-left: 40%; margin-top:-20px;'>
+		</form>
+	</div>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		forgotpass();
+	});
+	</script>
+</body>
+</html>

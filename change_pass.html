@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html, charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Portafolio Digital</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/practicas.css">
+	<link rel="stylesheet" type="text/css" href="fonts/fonts.css">
+	<script src="js/jquery-1.11.2.min.js"></script>		
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/practicas.js"></script>
+	<style type="text/css">
+		.rest_contra_change{
+			width: 50%;
+			border: 2px solid black;
+			border-radius: 5px;
+			margin-top: 200px;
+			margin-left: 25%;
+			display: block;
+		}
+	</style>
+</head>
+<body style="height:100% !important">
+	<div class="rest_contra_change">
+		<h1 id="pre_pass_change" style="text-align:center">
+			CAMBIAR CONTRASEÑA
+		</h1>
+		<h1 id="post_pass_change" style="text-align:center;display:none">
+			HECHO! SU CONTRASEÑA HA SIDO CAMBIADA EXITOSAMENTE.
+		</h1>
+		<br> <br> 
+		<form method="POST" class="container" id="form_change_pass">
+			<p class="input_pass_change">
+				Contraseña Actual:
+			</p>
+			<input type="password" name="old_pass" id="old_pass" style="margin-left:10px;width:35%;float:left;">
+			<br><br><br>
+			<p class="input_pass_change">
+				Nueva Contraseña:
+			</p>
+			<input type="password" name="new_pass" id="new_pass" style="margin-left:10px;width:35%;float:left;">
+			<br><br><br>
+			<p class="input_pass_change1">
+				Confirma Contraseña:
+			</p>
+			<input type="password" name="confirm_pass" id="confirm_pass" style="margin-left:10px;width:35%;float:left;">
+			<br>
+			<img src="img/cargando.gif" style="width:30px;float:right;margin-right:100px;display:none" id="cargando-login">
+			<br><br>
+			<input type='submit' value='Enviar' class="btn_pass_change" style='position:relative;margin-left: 40%; margin-top:-20px;'>
+		</form>
+	</div>
+</body>
+</html>

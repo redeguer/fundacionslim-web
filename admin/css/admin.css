@@ -1,0 +1,400 @@
+/** ADMIN CSS ***/
+
+/** ESTILOS GENERALES **/
+
+#admin-login{
+	margin-top  : 110px;
+	height		: 325px;
+}
+
+section{
+	font-family : 'helveticaneuelt_stdregular';
+}
+
+/*pasar a estilos generales*/
+.centered-text{
+	text-align : center;
+}
+
+.user-response{
+	display : none;
+	position: relative;
+	z-index: 5;
+}
+
+a{
+	text-decoration : none;
+}
+
+a:hover{
+	text-decoration : none;
+}
+
+#admin-principal{
+	margin-top : 140px;
+	height 	   : 500px;
+}
+
+.round-pager{
+	width 				  : 20px;
+	height 				  : 20px;
+	-webkit-border-radius : 50%;
+ 	-moz-border-radius    : 50%;
+  	border-radius         : 50%;
+  	background-color 	  : #EB9655;
+  	display 			  : inline-block;
+  	margin 				  : 5px;
+  	cursor 			  	  : pointer;
+  	color 				  : #fff;
+  	font-size 			  : 12px;
+  	padding-top 		  : 3px;
+  	text-align 			  : center;
+}
+
+.round-pager:hover{
+	background-color : #EC7419;
+}
+
+.pager-sel{
+	background-color : #EC7419;
+}
+
+.loading-charge{
+	position 			: relative; 
+	width				: 128px;
+	height				: 128px;
+	background-image	: url(../img/chart_loading.gif);
+	z-index				: 4;
+	left 				: 50%;
+	top 				: 50%;
+	margin-top 			: 64px;
+	margin-left 		: -64px;   
+	background-repeat 	: no-repeat;
+	background-color	: rgba(256,256,256,.7);
+	background-position : center;
+	background-size		: 128px 128px;
+	display 			: none;
+}
+
+.loading-charge-min{
+	position 			: absolute; 
+	width				: 128px;
+	height				: 128px;
+	background-image	: url(../img/chart_loading.gif);
+	z-index				: 4;
+	left 				: 50%;
+	top 				: 50%;
+	margin-top 			: -64px;
+	margin-left 		: -64px;   
+	background-repeat 	: no-repeat;
+	background-color	: rgba(256,256,256,.7);
+	background-position : center;
+	background-size		: 128px 128px;
+	display 			: none;
+}
+
+.btn-inline{
+	float: left;
+	height: 35px;
+	width: auto;
+	background-color: #eee;
+	border: none;
+	margin-left: 10px;
+	border-radius: 3px;
+	padding: 10px;
+}
+
+/** ADMINISTRACIÓN DE PDFs**/
+
+#li-adm-pdf:hover{
+	background-color : #508BAB;
+	color 			 : #fff;
+}
+
+.adm-pdf-sel{
+	background-color : #508BAB;
+	color 			 : #fff;
+}
+
+#admin-pdf{
+	margin-top : 140px;
+	overflow   : hidden;
+}
+
+#btn-new-pdf{
+	width  		  : 150px;
+	height 		  : 35px;
+	margin-bottom : 10px;
+}
+
+#cont-edit-pdf{
+	position 			  : absolute;
+	height  			  : 460px; 
+	background-color 	  : rgba(241,250,253,.9);
+	z-index 			  : 2;
+	top 				  : 160px;
+	color 				  : #064A6D;
+	-webkit-border-radius : 10px;
+ 	-moz-border-radius    : 10px;
+  	border-radius         : 10px;
+  	display				  : none;
+}
+
+#pdf-img-group{
+	height: 160px;
+}
+
+#pdf-file-group{
+	height: 65px;
+}
+
+.img-thumb-pdf{
+	position 		  : relative;
+	width 			  : 130px;
+	height 			  : 130px;
+	z-index 		  : 1;
+	background 		  : url(../img/no-thumb.jpg);
+	background-size   : auto 100%;
+	background-repeat : no-repeat;
+}
+
+.file-hidden-img{
+	position 	 : absolute;
+	width 		 : 100%;
+	height 		 : 100%;
+	-moz-opacity : .0 ;
+	filter 		 : alpha(opacity: 0);
+	opacity 	 : .0;
+	z-index 	 : 2;
+	top 		 : 0px;
+	margin 		 : 0px;
+	padding 	 : 0px;
+	right 		 : 0px;
+	cursor 		 : pointer;
+	font-size    : 120px; 
+}
+
+.btn-replace-img{
+	position 			  : relative;
+	overflow 			  : hidden; 
+	width    			  : 130px;
+	height   			  : 35px;   
+	background-color  	  : #FFC336;
+	z-index  			  : 1;  
+	color    			  : #fff; 
+	padding-top 		  : 6px; 
+	-webkit-border-radius : 5px;
+ 	-moz-border-radius    : 5px;
+  	border-radius         : 5px;
+  	text-align 			  : center;
+  	left 				  : 140px;
+  	top 			      : -80px;
+}
+
+.btn-replace-img:hover{
+	background-color : #EEB326;
+}
+
+.label-file{	
+	margin 	: 0px;
+	padding : 2px;
+}
+
+.file-pdf-icon{
+	position 		  : relative;
+	width 			  : 40px;
+	height 			  : 40px;
+	background 		  : url(../img/pdf-icon.png);
+	background-repeat : no-repeat;
+	margin-left 	  : 10px;
+}
+
+#link-pdf-file{
+	position : relative;
+	top 	 : -55px;
+	left 	 : 80px;
+}
+
+.file-hidden-pdf{
+	position 	 : absolute;
+	width 		 : 100%;
+	height 		 : 100%;
+	-moz-opacity : .0;
+	filter 		 : alpha(opacity: 0);
+	opacity 	 : .0;
+	z-index 	 : 2;
+	top 		 : 0px;
+	margin 		 : 0px;
+	padding 	 : 0px;
+	right 		 : 0px;
+	cursor 		 : pointer;
+	font-size 	 : 40px;
+}
+
+.replace-pdf-file{
+	position 			  : relative;
+	width 				  : 130px;
+	height 				  : 35px;	
+	top 				  : -60px;
+	left 				  : 135px;
+	overflow 			  : hidden;
+	background-color  	  : #E8985B;
+	z-index  			  : 1;  
+	color    			  : #fff; 
+	-webkit-border-radius : 5px;
+ 	-moz-border-radius    : 5px;
+  	border-radius         : 5px;
+  	text-align 			  : center;
+  	padding-top 		  : 6px;
+}
+
+.replace-pdf-file:hover{
+	background-color : #D8884B;
+}
+
+#cont-new-pdf{
+	position 			  : absolute;
+	height  			  : 460px; 
+	background-color 	  : rgba(241,250,253,.9);
+	z-index 			  : 2;
+	top 				  : 180px;
+	color 				  : #064A6D;
+	-webkit-border-radius : 10px;
+ 	-moz-border-radius    : 10px;
+  	border-radius         : 10px;
+  	display				  : none;
+}
+
+/** FIN DE ADMIN PDF's **/
+
+/** ADMIN CATEGORIAS **/
+
+#admin-categories{
+	margin-top : 140px;
+	height 	   : 570px;
+	overflow   : hidden;
+}
+
+#cont-edit-cat{
+	position 			  : absolute;
+	height  			  : 360px; 
+	background-color 	  : rgba(241,250,253,.9);
+	z-index 			  : 2;
+	top 				  : 180px;
+	color 				  : #064A6D;
+	-webkit-border-radius : 10px;
+ 	-moz-border-radius    : 10px;
+  	border-radius         : 10px;
+  	display				  : none;
+}
+
+#cont-new-cat{
+	position 			  : absolute;
+	height  			  : 270px; 
+	background-color 	  : rgba(241,250,253,.9);
+	z-index 			  : 2;
+	top 				  : 180px;
+	color 				  : #064A6D;
+	-webkit-border-radius : 10px;
+ 	-moz-border-radius    : 10px;
+  	border-radius         : 10px;
+  	display				  : none;
+}
+
+#cont-edit-sub{
+	position 			  : absolute;
+	height  			  : 360px; 
+	background-color 	  : rgba(241,250,253,.9);
+	z-index 			  : 2;
+	top 				  : 180px;
+	color 				  : #064A6D;
+	-webkit-border-radius : 10px;
+ 	-moz-border-radius    : 10px;
+  	border-radius         : 10px;
+  	display				  : none;
+}
+
+#cont-new-subcat{
+	position 			  : absolute;
+	height  			  : 270px; 
+	background-color 	  : rgba(241,250,253,.9);
+	z-index 			  : 2;
+	top 				  : 180px;
+	color 				  : #064A6D;
+	-webkit-border-radius : 10px;
+ 	-moz-border-radius    : 10px;
+  	border-radius         : 10px;
+  	display				  : none;
+}
+
+#category-division{
+	width: 100%;
+	height: 2px;
+	background-color: #666;
+	margin-top: 10px;
+	border-radius: 1px;
+	margin-bottom: 10px; 
+}
+
+/** FIN ADMIN CATEGORIAS**/
+
+/*********
+ESTILO DE LA ADMINISTRACION DE NOTICIAS
+*********/
+
+#admin-news{
+	margin-top : 140px;
+	height 	   : 570px;
+	overflow   : hidden;
+}
+
+#table-news td{
+	max-width: 260px;
+}
+
+#cont-new-news{
+	position 			  : absolute;
+	height  			  : 410px; 
+	background-color 	  : rgba(241,250,253,.9);
+	z-index 			  : 2;
+	top 				  : 240px;
+	color 				  : #064A6D;
+	-webkit-border-radius : 10px;
+ 	-moz-border-radius    : 10px;
+  	border-radius         : 10px;
+  	display				  : none;
+}
+
+#cont-edit-news{
+	position 			  : absolute;
+	height  			  : 410px; 
+	background-color 	  : rgba(241,250,253,.9);
+	z-index 			  : 2;
+	top 				  : 240px;
+	color 				  : #064A6D;
+	-webkit-border-radius : 10px;
+ 	-moz-border-radius    : 10px;
+  	border-radius         : 10px;
+  	display				  : none;
+}
+
+#cont-new-catnews{
+	position 			  : absolute;
+	height  			  : 210px; 
+	background-color 	  : rgba(241,250,253,.9);
+	z-index 			  : 2;
+	top 				  : 240px;
+	color 				  : #064A6D;
+	-webkit-border-radius : 10px;
+ 	-moz-border-radius    : 10px;
+  	border-radius         : 10px;
+  	display				  : none;
+}
+
+/*******
+FIN DE ESTILO DE NOTICIAS
+*******/
+
+
+
+

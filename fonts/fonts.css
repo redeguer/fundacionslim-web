@@ -1,0 +1,156 @@
+/** LIGHT **/
+@font-face {
+    font-family: 'helveticaneuelt_std_ltregular';
+    src: url('helveticaneueltstd-lt-webfont.eot');
+    src: url('helveticaneueltstd-lt-webfont.eot?#iefix') format('embedded-opentype'),
+         url('helveticaneueltstd-lt-webfont.woff') format('woff'),
+         url('helveticaneueltstd-lt-webfont.ttf') format('truetype'),
+         url('helveticaneueltstd-lt-webfont.svg#helveticaneuelt_std_ltregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+/** ROMAN **/
+@font-face {
+    font-family: 'helveticaneuelt_stdregular';
+    src: url('helveticaneueltstd-roman-webfont.eot');
+    src: url('helveticaneueltstd-roman-webfont.eot?#iefix') format('embedded-opentype'),
+         url('helveticaneueltstd-roman-webfont.woff') format('woff'),
+         url('helveticaneueltstd-roman-webfont.ttf') format('truetype'),
+         url('helveticaneueltstd-roman-webfont.svg#helveticaneuelt_stdregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+/** ULTRA LIGHT **/
+@font-face {
+    font-family: 'helveticaneuelt_std_ultltRg';
+    src: url('helveticaneueltstd-ultlt-webfont.eot');
+    src: url('helveticaneueltstd-ultlt-webfont.eot?#iefix') format('embedded-opentype'),
+         url('helveticaneueltstd-ultlt-webfont.woff') format('woff'),
+         url('helveticaneueltstd-ultlt-webfont.ttf') format('truetype'),
+         url('helveticaneueltstd-ultlt-webfont.svg#helveticaneuelt_std_ultltRg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+/** BOLD **/
+@font-face {
+    font-family: 'helveticaneuelt_stdbold';
+    src: url('helveticaneueltstd-bd-webfont.eot');
+    src: url('helveticaneueltstd-bd-webfont.eot?#iefix') format('embedded-opentype'),
+         url('helveticaneueltstd-bd-webfont.woff') format('woff'),
+         url('helveticaneueltstd-bd-webfont.ttf') format('truetype'),
+         url('helveticaneueltstd-bd-webfont.svg#helveticaneuelt_stdbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+/** ITALIC **/
+@font-face {
+    font-family: 'helveticaneuelt_stditalic';
+    src: url('helveticaneueltstd-it-webfont.eot');
+    src: url('helveticaneueltstd-it-webfont.eot?#iefix') format('embedded-opentype'),
+         url('helveticaneueltstd-it-webfont.woff') format('woff'),
+         url('helveticaneueltstd-it-webfont.ttf') format('truetype'),
+         url('helveticaneueltstd-it-webfont.svg#helveticaneuelt_stditalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+/** MEDIUM **/
+@font-face {
+    font-family: 'helveticaneuelt_std_medRg';
+    src: url('helveticaneueltstd-md-webfont.eot');
+    src: url('helveticaneueltstd-md-webfont.eot?#iefix') format('embedded-opentype'),
+         url('helveticaneueltstd-md-webfont.woff') format('woff'),
+         url('helveticaneueltstd-md-webfont.ttf') format('truetype'),
+         url('helveticaneueltstd-md-webfont.svg#helveticaneuelt_std_medRg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+/** BLACK **/
+@font-face {
+    font-family: 'helveticaneuelt_std_blkRg';
+    src: url('helveticaneueltstd-blk-webfont.eot');
+    src: url('helveticaneueltstd-blk-webfont.eot?#iefix') format('embedded-opentype'),
+         url('helveticaneueltstd-blk-webfont.woff') format('woff'),
+         url('helveticaneueltstd-blk-webfont.ttf') format('truetype'),
+         url('helveticaneueltstd-blk-webfont.svg#helveticaneuelt_std_blkRg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+/** HEAVY **/
+@font-face {
+    font-family: 'helveticaneuelt_std_medbold';
+    src: url('helveticaneueltstd-hv-webfont.eot');
+    src: url('helveticaneueltstd-hv-webfont.eot?#iefix') format('embedded-opentype'),
+         url('helveticaneueltstd-hv-webfont.woff') format('woff'),
+         url('helveticaneueltstd-hv-webfont.ttf') format('truetype'),
+         url('helveticaneueltstd-hv-webfont.svg#helveticaneuelt_std_medbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+/** THIN **/
+@font-face {
+    font-family: 'helveticaneuelt_std_thinRg';
+    src: url('helveticaneueltstd-th-webfont.eot');
+    src: url('helveticaneueltstd-th-webfont.eot?#iefix') format('embedded-opentype'),
+         url('helveticaneueltstd-th-webfont.woff') format('woff'),
+         url('helveticaneueltstd-th-webfont.ttf') format('truetype'),
+         url('helveticaneueltstd-th-webfont.svg#helveticaneuelt_std_thinRg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'PhinsterRegular';
+    src: url('phinst-webfont.eot');
+    src: url('phinst-webfont.eot?#iefix') format('embedded-opentype'),
+         url('phinst-webfont.woff') format('woff'),
+         url('phinst-webfont.ttf') format('truetype'),
+         url('phinst-webfont.svg#PhinsterRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'PhinsterBold';
+    src: url('phinstb-webfont.eot');
+    src: url('phinstb-webfont.eot?#iefix') format('embedded-opentype'),
+         url('phinstb-webfont.woff') format('woff'),
+         url('phinstb-webfont.ttf') format('truetype'),
+         url('phinstb-webfont.svg#PhinsterBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'FuturaStdLightRegular';
+    src: url('futurastd-light-webfont.eot');
+    src: url('futurastd-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('futurastd-light-webfont.woff') format('woff'),
+         url('futurastd-light-webfont.ttf') format('truetype'),
+         url('futurastd-light-webfont.svg#FuturaStdLightRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'FuturaMdBTBold';
+    src: url('futubd__-webfont.eot');
+    src: url('futubd__-webfont.eot?#iefix') format('embedded-opentype'),
+         url('futubd__-webfont.woff') format('woff'),
+         url('futubd__-webfont.ttf') format('truetype'),
+         url('futubd__-webfont.svg#FuturaMdBTBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+	font-family: 'icons';
+	src: url("font/icons.eot");
+	src: 
+		url("font/icons.eot?#iefix") format('embedded-opentype'), 
+		url("font/icons.woff") format('woff'), 
+		url("font/icons.ttf") format('truetype'), 
+		url("font/icons.svg#icons") format('svg');
+	font-weight: normal;
+	font-style: normal;
+}

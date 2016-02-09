@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+		<title>Portafolio Digital</title>
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/main.css">
+		<link rel="stylesheet" type="text/css" href="css/admin.css">
+		<link rel="stylesheet" type="text/css" href="../fonts/fonts.css">
+		<link rel="stylesheet" type="text/css" href="../css/datepicker.css">
+		<script src="../js/jquery-1.11.2.min.js"></script>		
+		<script src="../js/bootstrap.min.js"></script>
+		<script src="../js/bootstrap-datepicker.min.js"></script>
+		<script src="../js/bootstrap-datepicker.es.min.js"></script>
+		<script src="../js/parse.min.js"></script>
+		<script src="js/admin.js"></script>
+	</head>
+	<body onload="verifySession(3)">
+		<header>
+			<div id="top-blue-line"></div>			
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12 col-xs-12">
+						<div id="logo"><img src="../img/logo.png" style="max-height:40px;"></div>
+						<div id="portal-name"><i>Portafolio Digital</i></div>
+						<div id="social-networks">
+			              	<div id="sn-tw" class="sn-ind"></div>           
+			            	<div id="sn-fb" class="sn-ind"></div>
+            			</div>
+						<div id="btn-menu-mob">&#9776;</div>
+						
+					</div>
+				</div>
+			</div>
+		</header>		
+  		<nav>
+	        <div class="container">
+	          <div id="navbar">
+	            <ul class="navli">
+	              <a href="consola.html"><li id="li-inicio">&nbsp;<span id="txt-mob-incio">Inicio<span></li></a>
+	              <a href="admin-pdf.html"><li id="li-adm-pdf" >Administrar PDFs</li></a>
+	              <a href="admin-news.html"><li id="li-adm-not">Noticias</li></a>
+	              <li id="li-adm-logout">Cerrar sesión</li>
+	              <li id="logo-slim-mob"></li>
+	            </ul>
+	          </div>
+	        </div>    	
+		</nav>
+		<section id="admin-news" class="container">
+			<div class="row container-fluid">
+				<h3>Administración de Noticias</h3>
+				<div class="col-md-7 col-md-offset-1">
+					<div id="btn-view-news" class="btn btn-warning">Noticias</div>
+					<div id="btn-new-news" class="btn btn-default">Nueva Noticia</div>
+					<div id="btn-view-newscat" class="btn btn-primary">Categorias</div>
+					<div id="btn-new-catnews" class="btn btn-default">Nueva Categoria</div><br><br>
+				</div>
+				<div class="col-md-10 col-md-offset-1">
+					<div class="user-response" id="news-responses" ></div>
+					<table id="table-news" class="table table-striped">
+						
+					</table>
+					<div id="load-list-news" class="loading-charge"></div>
+					<div id="cont-news-pager"></div>
+				</div>
+				<div id="cont-new-news" class="col-md-10 col-md-offset-1">
+					<div class="row" >
+						<div class="col-md-8 col-md-offset-3">
+							<h3>Nueva Noticia</h3>
+						</div>
+						<form method="POST" id="new-news-form">
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for="new-news-title">Titulo</label>
+									<input type="text" class="form-control" id="new-news-title">
+								</div>
+								<div class="form-group">
+									<label for="new-news-teaser">Autor</label>
+									<input type="text" class="form-control" id="new-news-teaser">
+								</div>
+								<div class="form-group">
+									<label for="new-news-text">Texto de la noticia</label>
+									<textarea rows="5" class="form-control" id="new-news-text"></textarea>
+								</div>
+								
+	  							<button type="submit" class="btn btn-primary">Guardar</button>
+	  							<button type="button" id="btn-cancel-nnews" class="btn btn-danger">Cancelar</button>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for="new-news-url">URL de la Noticia</label>
+									<input type="text" class="form-control" id="new-news-url">
+								</div>
+								<div class="form-group">
+									<label for="new-news-img">URL de la Imagen</label>
+									<input type="text" class="form-control" id="new-news-img">
+								</div>
+								<div class="form-group">
+									<label for="new-news-category">Categoria</label>
+									<select class="form-control" id="new-news-category">
+										<option value="-1">Seleccione una categoría</option>
+									</select>
+								</div>
+								<div class="form-group">
+									<label for="new-news-img">Fecha de la Noticia</label>
+									<input type="text" class="form-control" id="new-news-date" data-provide="datepicker">
+								</div>
+								<!--<span class="label-file">Imagen</span>
+								<div id="new-img-news" class="img-thumb-pdf">
+  								</div>
+								<div class="btn-replace-img">
+  									<span>Examinar...</span>
+    								<input type="file" class="file-hidden-img" id="new-news-image">
+  								</div>-->
+							</div>
+						</form>
+					</div>
+					<div class="col-md-10 col-md-offset-1">
+  						<div class="user-response" id="newnews-response" ></div>
+					</div>
+					<div id="load-new-news" class="loading-charge-min"></div>
+				</div>
+				<div id="cont-edit-news" class="col-md-10 col-md-offset-1">
+					<div class="row" >
+						<div class="col-md-6 col-md-offset-3">
+							<h3>Editar Noticias</h3>
+						</div>
+						<form method="POST" id="edit-news-form">
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for="new-news-title">Titulo</label>
+									<input type="hidden" class="form-control" id="edit-news-id">
+									<input type="text" class="form-control" id="edit-news-title">
+								</div>
+								<div class="form-group">
+									<label for="new-news-teaser">Autor</label>
+									<input type="text" class="form-control" id="edit-news-teaser">
+								</div>
+								<div class="form-group">
+									<label for="new-news-text">Texto de la noticia</label>
+									<textarea rows="5" class="form-control" id="edit-news-text"></textarea>
+								</div>
+	  							<button type="button" id="btn-edit-news" class="btn btn-success">Editar</button>
+	  							<button type="submit" id="submit-edit-news" class="btn btn-primary">Guardar</button>
+	  							<button type="button" id="btn-cancel-enews" class="btn btn-danger">Cancelar</button>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for="new-news-url">URL de la Noticia</label>
+									<input type="text" class="form-control" id="edit-news-url">
+								</div>
+								<div class="form-group">
+									<label for="new-news-img">URL de la Imagen</label>
+									<input type="text" class="form-control" id="edit-news-img">
+								</div>
+								<div class="form-group">
+									<label for="new-news-category">Categoria</label>
+									<select class="form-control" id="edit-news-category">
+										<option value="-1">Seleccione una categoría</option>
+									</select>
+								</div>
+								<div class="form-group">
+									<label for="new-news-img">Fecha de la Noticia</label>
+									<input type="text" class="form-control" id="edit-news-date" data-provide="datepicker">
+								</div>
+								<!--<span class="label-file">Imagen</span>
+								<div id="new-img-news" class="img-thumb-pdf">
+  								</div>
+								<div class="btn-replace-img">
+  									<span>Examinar...</span>
+    								<input type="file" class="file-hidden-img" id="edit-news-image">
+  								</div>-->
+							</div>
+						</form>
+					</div>
+					<div class="col-md-10 col-md-offset-1">
+  						<div class="user-response" id="editnews-response" ></div>
+					</div>
+					<div id="load-edit-news" class="loading-charge-min"></div>
+				</div>
+			</div>
+			<div id="cont-new-catnews" class="col-md-7 col-md-offset-1">
+				<div class="row">
+					<div class="col-md-6 col-md-offset-3">
+						<h3>Nueva Categoría</h3>
+					</div>
+					<div class="col-md-6  col-md-offset-2">
+						<form method="POST" id="new-catnews-form">
+							<div class="form-group">
+								<label for="new-txt-catnews">Nombre de la Categoria</label>
+								<input type="text" class="form-control" id="new-txt-catnews">
+							</div>
+							<button type="submit" id="submit-new-catnews" class="btn btn-primary">Guardar</button>
+	  						<button type="button" id="btn-cancel-ncatnews" class="btn btn-danger">Cancelar</button>
+						</form>
+					</div>
+				</div>
+				<div class="col-md-10 col-md-offset-1">
+  					<div class="user-response" id="newcatnews-responses" ></div>
+				</div>
+			</div>
+		</section>
+		<footer>
+			<div  class="container">
+				<div id="aviso-priv"><img style="max-width:22px;" src="../img/aviso.png">&nbsp;Aviso de privacidad</div>
+				<div id="logo-foot"><img src="../img/logo-black.png"></div>
+				<div id="logo-foot-mob"><img src="../img/logo-black.png"></div>
+			</div>
+		</footer>
+		<div class="bottom-line-right">
+  		 	Aviso de privacidad
+		</div>
+		<div class="bottom-line">
+			Instituto Carlos Slim de la Salud
+		</div>
+	</body>
+</html>

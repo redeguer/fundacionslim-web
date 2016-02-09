@@ -1,0 +1,243 @@
+/** ESTILOS GENERALES CALCULADORA **/
+
+.calc-controls-container{
+  background-color : #fcfcfc;
+  padding          : 10px;
+  margin-bottom    : 10px;
+  margin-top       : 20px;
+}
+
+.calc-control-item{
+  margin : 10px;
+}
+
+.calc-control-item p{
+  font-size     : 15px;
+  margin-bottom : 20px;
+}
+
+.calc-drag-path{
+  width                 : 340px;
+  height                : 3px;
+  background-color      : #ccc;
+  -webkit-border-radius : 6px;
+  -moz-border-radius    : 6px;
+  border-radius         : 6px;
+}
+
+.calc-drag-circle{
+  width                 : 35px;
+  height                : 35px;
+  color                 : #fff;
+  font-size             : 12px;
+  padding-top           : 10px;
+  margin-top            : -18px;
+  text-align            : center;
+  cursor                : move;
+  -webkit-border-radius : 50%;
+  -moz-border-radius    : 50%;
+  border-radius         : 50%;
+  background-color      : rgba(10,10,10,1);
+}
+
+.calculator-title{
+  font-size : 18px;
+}
+
+.calc-cont-label{
+  width       : 340px;
+  height      : 20px;
+  padding-top : 2px;
+  margin-top  : 5px;
+}
+.calc-label-left{
+  float     : left;
+  font-size : 12px;
+  color     : #aaa;
+}
+.calc-label-right{
+  float     : right;
+  font-size : 12px;
+  color     : #aaa;
+}
+
+/** END ESTILOS GENERALES**/
+
+/** CALCULADORA DE CARDIO **/
+#cardio-calculator{
+  margin-top    : 190px;
+  height        : 750px;
+  margin-bottom : 20px;
+}
+#control-cardiovascular{
+  height      : 650px;
+  border-left : 2px solid #814296;
+}
+/** END CARDIO CAL **/
+
+
+#drag-weight{
+    background-color: #814296;
+}
+#drag-height{
+    background-color: #ffa500;
+}
+#drag-waist{
+    background-color: #502555;
+}
+
+
+
+input[type=radio]:not(old){
+  width     : 2em;
+  margin    : 0;
+  padding   : 0;
+  font-size : 1em;
+  opacity   : 0;
+}
+input[type=radio]:not(old) + label{
+  display      : inline-block;
+  margin-left  : -2em;
+  line-height  : 1.2em;
+  color: #aaa;
+  font-size:13px
+}
+input[type=radio]:not(old) + label > span{
+  display          : inline-block;
+  width            : 1.2em;
+  height           : 1.2em;
+  margin           : 0em 0.5em 0em 0.25em;
+  border           : 0.07em solid rgb(192,192,192);
+  border-radius    : 0.3em;
+  background       : rgb(224,224,224);
+  background-image :    -moz-linear-gradient(rgb(240,240,240),rgb(224,224,224));
+  background-image :     -ms-linear-gradient(rgb(240,240,240),rgb(224,224,224));
+  background-image :      -o-linear-gradient(rgb(240,240,240),rgb(224,224,224));
+  background-image : -webkit-linear-gradient(rgb(240,240,240),rgb(224,224,224));
+  background-image :         linear-gradient(rgb(240,240,240),rgb(224,224,224));
+  vertical-align   : center;
+}
+input[type=radio   ]:not(old):checked + label > span{
+  background-image : -moz-linear-gradient(rgb(224,224,224),rgb(240,240,240));
+  background-image :     -ms-linear-gradient(rgb(224,224,224),rgb(240,240,240));
+  background-image :      -o-linear-gradient(rgb(224,224,224),rgb(240,240,240));
+  background-image : -webkit-linear-gradient(rgb(224,224,224),rgb(240,240,240));
+  background-image :         linear-gradient(rgb(224,224,224),rgb(240,240,240));
+}
+input[type=radio]:not(old):checked + label > span > span{
+  display          : block;
+  width            : 0.9em;
+  height           : 0.9em;
+  margin           : 0.15em;
+  border           : 0.05em solid rgb(115,153,77);
+  border-radius    : 0.45em;
+  background      rgb(60,119,238);
+  background-image : -moz-linear-gradient(rgb(21,82,202),rgb(60,119,238));
+  background-image : -ms-linear-gradient(rgb(21,82,202),rgb(60,119,238));
+  background-image : -o-linear-gradient(rgb(21,82,202),rgb(60,119,238));
+  background-image : -webkit-linear-gradient(rgb(21,82,202),rgb(60,119,238));
+  background-image : linear-gradient(rgb(21,82,202),rgb(60,119,238));
+}
+.imc-element-name{
+  font-weight: bold;
+  font-size: 15px;
+}
+.calc-btn-reset{
+  background-color: #444;
+  color: #fff;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 8px;
+  -webkit-border-radius:5px;
+  -moz-border-radius:5px;
+  border-radius: 5px;
+}
+.calc-btn-reset:hover{
+  background-color: #505050;
+}
+
+#frame-arc{
+    position: relative;
+    height:270px;
+    width:416px;
+    background-color: rgba(256,256,256,1);
+    background-image: url(../img/arco.png);
+    background-repeat: no-repeat;
+    left: 30px;
+}
+#title-indicator-imc{
+    text-align: center;
+}
+#arco{
+    position: absolute;
+    z-index: 3;
+    left:8px;
+    top:11px;
+}
+#antialiasing-inner-arc{
+    position: relative;
+    z-index: 4;
+    top:-115px;
+    left: 33px;
+    /*display: none;*/
+}
+#antialiasing-outer-arc{
+    position: relative;
+    z-index: 4;
+    top: -323px;
+    left: 8px;
+    
+}
+#marco-arco{
+    position: absolute;
+    width: 280px;
+    height: 140px;
+    z-index: 2px;
+    top: 0;
+    left: 0;
+}
+#imc-valores{
+    text-align: center;
+}
+#image-imc{
+    position: relative;
+    top: -450px;
+    left: 150px;
+}
+#imc-value{
+    color: #ffa500;
+}
+#weight-recommended{
+    color:#333AC0;
+}
+.grey-line-thin{
+    background-color: #cccccc;
+    width: 150px;
+    height: 1px;
+    margin-bottom: 5px;
+    margin-left: 150px;
+}
+.btn-share-calc{
+    background-color: #814296;
+    color: #fff;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 8px;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius: 5px;
+}
+.moving-circle{
+    -webkit-box-shadow: 0px 5px 8px -2px rgba(138,134,138,0.88);
+    -moz-box-shadow: 0px 5px 8px -2px rgba(138,134,138,0.88);
+    box-shadow: 0px 5px 8px -2px rgba(138,134,138,0.88);
+    filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=3,MakeShadow=true,ShadowOpacity=0.30);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Blur(PixelRadius=3,MakeShadow=true,ShadowOpacity=0.30)";
+    zoom: 1;
+}
+
+#click-salud{
+    height: 300px;
+    background-color: #13347B;
+}
+

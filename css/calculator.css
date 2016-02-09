@@ -1,0 +1,1739 @@
+/** ESTILOS GENERALES CALCULADORA **/
+#calc-cancel-sub,
+#calc-cancel-sub-teen{
+  height      : 35px !important;  
+  width       : 80px !important;
+}
+.calculator-title{
+  font-size   : 25px;
+  font-family : 'helveticaneuelt_std_medRg';
+  color       : #373737;
+}
+
+.calculator-result-title{
+  font-size   : 22px;
+  font-family : 'helveticaneuelt_stdregular';
+  color       : #474747;
+  margin-top: 20px;
+}
+
+.calc-controls-container{
+  background-color : #fcfcfc;
+  padding          : 10px;
+  margin-bottom    : 10px;
+  margin-top       : 20px;
+  font-family      : 'helveticaneuelt_stdregular';
+  color            : #2F3032;
+}
+
+.calc-control-item{
+  margin : 10px;
+}
+
+.calc-item-name{
+  font-family     : 'helveticaneuelt_std_medRg';
+  font-size       : 14px;
+  vertical-align  : middle;
+  padding-top     : 5px;
+}
+
+.calc-control-item p{
+  font-family   : 'helveticaneuelt_std_medRg';
+  font-size     : 14px;
+  margin-bottom : 24px;
+}
+
+.calc-input-text{
+  width : 100%;
+}
+
+.calc-label-square{
+  font-size      : 13px;
+  padding-top    : 5px;
+  vertical-align : middle;
+  margin-left    : 5px;
+}
+
+.calc-square-sel{
+  display        : inline-block;
+  width          : 20px;
+  height         : 20px;
+  border         : 1px solid #aaa;
+  margin-left    : 2px; 
+  vertical-align : middle;
+  cursor         : pointer;
+  padding-left   : 3px;
+  text-shadow    : 0 0 0.0714em rgb(115,153,77);
+}
+
+.calc-drag-path{
+  width                 : 340px;
+  height                : 3px;
+  background-color      : #ccc;
+  -webkit-border-radius : 6px;
+  -moz-border-radius    : 6px;
+  border-radius         : 6px;
+}
+.mob-drag-circle,
+.calc-drag-circle{
+  width                 : 42px;
+  height                : 42px;
+  color                 : #fff;
+  font-size             : 15px;
+  padding-top           : 11px;
+  margin-top            : -22px;
+  text-align            : center;
+  cursor                : pointer;
+  -webkit-border-radius : 50%;
+  -moz-border-radius    : 50%;
+  border-radius         : 50%;
+  background-color      : rgba(10,10,10,1);
+  -webkit-touch-callout : none;
+  -webkit-user-select   : none;
+  -khtml-user-select    : none;
+  -moz-user-select      : none;
+  -ms-user-select       : none;
+  user-select           : none;
+}
+
+.mob-moving-circle,
+.calc-moving-circle{
+  -webkit-touch-callout : none;
+  -webkit-user-select   : none;
+  -khtml-user-select    : none;
+  -moz-user-select      : none;
+  -ms-user-select       : none;
+  user-select           : none;
+  -webkit-box-shadow    : 0px 5px 8px -2px rgba(138,134,138,0.88);
+  -moz-box-shadow       : 0px 5px 8px -2px rgba(138,134,138,0.88);
+  box-shadow            : 0px 5px 8px -2px rgba(138,134,138,0.88);
+  zoom                  : 1;
+}
+
+.calc-input-value{
+  width        : 35px;
+  height       : 22px;
+  margin-left  : 5px;
+  margin-right : 5px;
+  font-family  : 'helveticaneuelt_stdregular';
+}
+
+.calc-drag-limits{
+  width       : 340px;
+  height      : 20px;
+  padding-top : 2px;
+  margin-top  : 5px;
+  color       : #aaa;
+  font-size   : 12px;
+}
+
+.calc-limit-left{
+  float : left;
+}
+
+.calc-limit-right{
+  float : right;
+}
+
+.calc-info-field{
+  color     : #569CD8;
+  margin    : 2px;
+  font-size : 13px;
+  cursor    : pointer;
+}
+
+.calc-info-field:hover{
+  color   : #307AA3;
+}
+
+.calc-btn-reset{
+
+  background-color      : #444;
+  color                 : #fff;
+  padding-left          : 40px;
+  padding-right         : 40px;
+  padding-top           : 8px;
+  -webkit-border-radius : 5px;
+  -moz-border-radius    : 5px;
+  border-radius         : 5px;
+}
+
+.calc-btn-reset:hover{
+  background-color : #505050;
+}
+
+#btn-print-activity{
+  width: 145px;
+  position: relative;
+  top: 35px !important;
+  margin-left: 200px;
+  background-color      : #008DF6;
+  color                 : #fff;
+  padding-left          : 40px;
+  padding-right         : 40px;
+  padding-top           : 8px;
+  -webkit-border-radius : 5px;
+  -moz-border-radius    : 5px;
+  border-radius         : 5px;
+}
+
+.btn-share-calc{
+  background-color      : #814296;
+  color                 : #fff;
+  padding-left          : 40px;
+  padding-right         : 40px;
+  padding-top           : 8px;
+  -webkit-border-radius : 5px;
+  -moz-border-radius    : 5px;
+  border-radius         : 5px;
+}
+
+.centered-text{
+  text-align : center;
+}
+
+.bold-text{
+  font-family : 'helveticaneuelt_std_medRg';
+}
+
+#click-salud{
+  height           : 100px;
+  background-color : #13347B;
+}
+.text_all_calc{
+  -webkit-transform: translateY(130%);
+  -ms-transform: translateY(130%);
+  transform: translateY(130%);
+  color: white;
+  font-size: 20px;
+}
+.text_all_calc a{
+  color: #A9E2F3;
+}
+
+#click-salud_renal{
+
+  background-color : #13347B;
+}
+.text_all_calc_renal{
+
+  color: white;
+  font-size: 16px;
+}
+.text_all_calc_renal a{
+  color: #A9E2F3;
+}
+
+#send-result-w,
+#send-result-w-teen{
+  position              : absolute;
+  top                   : 550px;
+  width                 : 0px;
+  height                : 0px;
+  -webkit-border-radius : 5px;
+  -moz-border-radius    : 5px;
+  border-radius         : 5px;
+  background            : #f7f5f6;
+  overflow              : hidden;
+  margin-left           : auto;
+  margin-right          : auto;
+  z-index               : 6;  
+}
+
+.top-send-res{
+  width                           : 100%;
+  height                          : 35px;
+  background-color                : #008df6;
+  color                           : #fff;
+  font-size                       : 15px;
+  padding-top                     : 7px;
+  padding-left                    : 10px;   
+  -webkit-border-top-left-radius  : 5px;
+  -webkit-border-top-right-radius : 5px;
+  -moz-border-radius-topleft      : 5px;
+  -moz-border-radius-topright     : 5px;
+  border-top-left-radius          : 5px;
+  border-top-right-radius         : 5px;
+}
+
+.form-result-w{
+  padding-left  : 10px;
+  padding-right : 10px;
+  margin-top    : 5px; 
+  text-align    : left;
+}
+
+.foot-send-res{
+  position         : relative;
+  width            : 90%;
+  height           : 45px; 
+  color            : #fff;
+  background-color : rgba(70,70,70,.7);
+  font-size        : 18px;
+  margin-left      : 5%;
+  top              : -140px;
+  padding-top      : 15px;
+  text-align       : center;
+}
+
+.info-popup{
+  position              : absolute;
+  width                 : 250px;
+  height                : 85px;
+  background-color      : rgba(255,248,220,.8);
+  -webkit-border-radius : 10px;
+  -moz-border-radius    : 10px;
+  border-radius         : 10px;
+  padding               : 7px;
+  z-index               : 4;
+  border                : 2px solid #DEB887;
+  color                 : #393939; 
+  font-size             : 12px;
+}
+
+.mob-container{
+  margin-top: 250px !important;
+  display: none;
+}
+#lg-mobil{
+  margin-top: -60px !important;
+}
+
+/** END ESTILOS GENERALES**/
+
+/** IMC CALCULATOR **/
+
+#imc-calculator{
+  margin-top    : 300px;
+
+  margin-bottom : 20px;
+}
+
+#imc-control{
+  min-height      : 500px;
+  border-left : 2px solid #814296;
+}
+
+#mob-imc-drag-weight,
+#imc-drag-weight{
+  background-color : #814296;
+}
+
+#mob-imc-drag-height,
+#imc-drag-height{
+  background-color : #ffa500;
+}
+
+#mob-imc-drag-waist,
+#imc-drag-waist{
+  background-color : #502555;
+}
+
+#imc-arc-container{
+  position          : relative;
+  height            : 270px;
+  width             : 416px;
+  background-color  : rgba(256,256,256,1);
+  background-image  : url(../img/arco.png);
+  background-repeat : no-repeat;
+  margin-left       : auto;
+  margin-right      : auto;  
+}
+
+#imc-arc-frame{
+  position     : relative;
+  width        : 280px;
+  height       : 140px;
+  z-index      : 2px;
+  margin-left  : auto;
+  margin-right : auto;
+}
+  
+#antialiasing-inner-arc{
+  position : relative;
+  z-index  : 4;
+  top      : 41px;
+  left     : 0px;
+}
+
+#antialiasing-outer-arc{
+  position : relative;
+  z-index  : 4;
+  top      : -168px;
+  left     : 0px;
+}
+
+#imc-arc{
+  position : relative;
+  z-index  : 3;
+  left     : 0px;
+  top      : -370px;
+}
+
+#imc-value{
+  color : #ffa500;
+}
+
+#imc-values{
+  text-align : center;
+}
+
+#imc-image{
+  position : relative;
+  top      : -510px;
+}
+
+
+#recommended-weight{
+  color : #333AC0;
+}
+
+.grey-line-thin{
+  background-color : #cccccc;
+  width            : 150px;
+  height           : 1px;
+  margin-bottom    : 5px;
+  margin-left      : auto;
+  margin-right     : auto; 
+}
+
+#btn-send-imc{
+  position : relative;
+  z-index  : 2;
+}
+
+/** 
+  END IMC CALCULATOR 
+**/
+
+/****** 
+CALCULADORA DE CARDIO 
+******/
+
+#cardio-calculator{
+  margin-top    : 300px;
+  height        : 750px;
+  margin-bottom : 20px;
+}
+
+#control-cardio{
+  height      : 515px;
+  border-left : 2px solid #814296;
+}
+
+#mob-cardio-drag-weight,
+#cardio-drag-weight{
+  background-color : #FE2E2E;
+}
+
+#mob-cardio-drag-pressure,
+#cardio-drag-pressure{
+  background-color : #FE2E2E;
+}
+
+#mob-cardio-drag-cholesterol,
+#cardio-drag-cholesterol{
+  background-color : #ff7f00;
+}
+
+.calc-percent{
+  color       : #000;
+  font-family : 'helveticaneuelt_stdregular';
+  text-align  : center;
+}
+
+.calc-gline-percent{
+  position              : relative;
+  background-color      : #ddd;
+  height                : 10px;
+  width                 : 300px;
+  top                   : 0px;
+  -webkit-border-radius : 4px;
+  -moz-border-radius    : 4px;
+  border-radius         : 4px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.calc-oline-percent{
+  position              : relative;
+  background-color      : #000;
+  height                : 10px;
+  width                 : 0px;
+  top                   : -10px;
+  -webkit-border-radius : 4px;
+  -moz-border-radius    : 4px;
+  border-radius         : 4px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.calc-subtitle{
+  color       : #444;
+  font-size   : 17px;
+  text-align  : center;
+  font-family : 'helveticaneuelt_stdregular';
+}
+
+.calc-tables{
+  width    : 500px;
+  height   :  410px;
+  overflow : hidden;
+}
+
+.risk-table{
+  float   : left;
+  margin  : 5px;
+}
+
+.risk-table table, td{
+  border : 2px solid #fff;
+}
+
+.risk-table td{
+  width   : 22px;
+  height  : 22px;
+}
+.bigCardioTable{
+  position  : relative;
+  left      : 100px;
+  top       : 50px; 
+  opacity   : 0.1;
+  filter    :  alpha(opacity=10);
+}
+
+.bigCardioTable td{
+  width  : 42px;
+  height : 42px;
+}
+
+.td0{
+  background-color : #910005;
+}
+
+.td1{
+  background-color : #d30007;
+}
+
+.td2{
+  background-color : #ff7f00;
+}
+
+.td3{
+  background-color : #ffd200;
+}
+
+.td4{
+  background-color : #77da02;
+}
+
+#pop-sistolica{
+  left    : 220px;
+  top     : 260px;
+  display : none;
+}
+
+#pop-cholesterol{
+  left    : 130px;
+  top     : 370px;
+  display : none;
+}
+
+/******
+END CARDIO CAL 
+*******/
+
+/*********
+CALCULADORA RENAL
+********/
+
+#renal-calculator{
+  margin-top    : 300px;
+  height        : 800px;
+  margin-bottom : 30px;
+}
+
+#renal-controls{
+  border-left : 2px solid #f04040;
+}
+
+#mob-renal-drag-age,
+#renal-drag-age{
+  background-color : #B10808;
+}
+
+#mob-renal-drag-weight,
+#renal-drag-weight{
+  background-color : #A20808;
+}
+
+#renal-drag-height{
+  background-color : #890808;
+}
+
+#mob-renal-drag-creatinine,
+#renal-drag-creatinine{
+  background-color : #690808;
+}
+
+.calculator-subtitle{
+   margin-top : 10px;
+   width      : 100%;
+}
+
+#renal-animation-container{
+  position              : relative;
+  width                 : 329px;
+  height                : 329px;
+  overflow              : hidden;
+  box-sizing            : border-box;
+  -moz-box-sizing       : border-box;
+  -webkit-box-sizing    : border-box;
+  -webkit-border-radius : 50%;
+  -moz-border-radius    : 50%;
+  border-radius         : 50%;
+  border                : 2px solid #e7e7e7;
+  z-index               : 5;
+  margin-top            : 10px;
+  margin-bottom         : 20px;
+  left                  : 50%;
+  margin-left           : -164px;
+  /*fix para safari*/
+  -webkit-mask-image    : url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
+}
+
+#renal-circle-frame{
+  position         : relative;
+  width            : 329px;
+  height           : 329px;
+  background-image : url(../img/marco-renal.png);
+  z-index          : 4;
+  left             : -2px;
+  top              : -2px;
+}
+
+#calc-renal-image{
+  position         : relative;
+  width            : 170px;
+  height           : 170px;
+  background-image : url(../img/rinon.png);
+  z-index          : 5;
+  top              : -250px;
+  left             : 50%;
+  margin-left      : -85px;
+}
+
+#water-canvas{
+  position : relative;
+  top      : -750px;
+  left     : -20px;
+}
+
+.calc-explanation{
+  clear     : both;
+  font-size : 13px;
+}
+
+.calc-recomendation{
+
+  margin-top       : 20px;
+  padding          : 15px;
+  color            : #fff;
+}
+
+#calc-renal-rec ol li{
+  margin : 4px;
+}
+
+.calc-text-recom{
+  display : none;
+}
+
+#pop-creatinine{
+  left    : 138px;
+  top     : 260px;
+  display : none;
+}
+
+/********
+END RENAL CALCULATOR 
+*******/
+
+/*********** 
+CALCULADORA DE GASTO CALÓRICO 
+*****/
+
+#caloric-calculator{
+  margin-top    : 300px;
+  height        : 700px;
+  margin-bottom : 30px;
+}
+
+#caloric-controls{
+  border-left : 2px solid #f04040;
+}
+
+#mob-caloric-drag-age,
+#caloric-drag-age{
+  background-color : #F53333;
+}
+
+#mob-caloric-drag-weight,
+#caloric-drag-weight{
+  background-color : #F55757;
+}
+
+#mob-caloric-drag-height,
+#caloric-drag-height{
+  background-color : #F57373;
+}
+
+
+#caloric-container{
+  position         : relative;
+  width            : 300px;
+  height           : 300px;
+  margin-top       : 20px;
+  left             : 50%;
+  margin-left      : -150px;
+  padding          : 50px;
+  background-image : url(../img/marco-calorico.png);
+}
+
+.caloric-result{
+  position    : relative;
+  font-size   : 70px;
+  text-align  : center;
+  margin-top  : 25px;
+  font-family : 'helveticaneuelt_stdregular';
+  color       : #F54141;
+}
+
+#calorie-unit{
+  font-size : 40px;
+  color     : #F54141;
+}
+
+.caloric-shadow-l{
+  -webkit-transition : text-shadow 0.2s ease-in-out;
+  -moz-transition    : text-shadow 0.2s ease-in-out;
+  -o-transition      : text-shadow 0.2s ease-in-out;
+  -ms-transition     : text-shadow 0.2s ease-in-out;
+  transition         : text-shadow 0.2s ease-in-out;    
+  text-shadow        : 5px 0px 7px #bbb;  
+}
+
+.caloric-shadow-r{
+  -webkit-transition : text-shadow 0.2s ease-in-out;
+  -moz-transition    : text-shadow 0.2s ease-in-out;
+  -o-transition      : text-shadow 0.2s ease-in-out;
+  -ms-transition     : text-shadow 0.2s ease-in-out;
+  transition         : text-shadow 0.2s ease-in-out;    
+  text-shadow        : -5px 0px 7px #bbb;  
+}
+
+.caloric-no-shadow{
+  text-shadow : 0px 0px 4px #e7e7e7;   
+}
+
+#caloric-r2{
+  opacity : 0;
+  top     : -80px;
+}
+
+#caloric-values{
+  position    : relative;
+  
+  height      : 100px;
+  margin-top  : 10px;
+  left        : 50%;
+  margin-left : -210px;
+  font-family : 'helveticaneuelt_stdregular';
+  text-align  : center;
+}
+
+#caloric-values p{
+   margin : 5px;
+}
+
+#caloric-keep{
+  width: 200px;
+  margin  : 5px;
+  padding : 5px;
+  position: relative;
+  left: 30%;
+}
+
+#caloric-keep-val{
+  font-size : 35px;
+  color     : #F0C02F;
+}
+
+.values-division{
+  width            : 2px;
+  height           : 100px;
+  background-color : #e7e7e7;
+  float            : left;
+  margin           : 5px;
+}
+
+#caloric-reduce{
+  float   : left;
+  margin  : 5px;
+  color   : #000;
+  clear   : right;
+  padding : 5px;
+  width: 200px;
+  position: relative;
+  top: 33px;  
+}
+
+#caloric-reduce-val{
+  font-size : 35px;
+  color     : #F54141
+}
+
+/******* 
+END CALCULADORA CALORICA
+*******/
+
+/*********
+CALCULADORA DE ACTIVIDAD FÍSICA
+*********/
+
+#activity-calculator{
+  margin-top    : 300px;
+  min-height        : 650px;
+  margin-bottom : 20px;
+  font-family   : 'helveticaneuelt_stdregular';
+}
+
+#btn-share-activity{
+  display: none;
+}
+
+#activity-controls{
+  border-left : 2px solid #319FF3;
+}
+
+.calc-question-item{
+    height : 70px;
+}
+
+.activity-question{
+  float : left;
+  width : 490px;
+}
+
+.square-container{
+  float       : right;
+  margin-top  : 5px;
+}
+
+.square-container1{
+  float       : right;
+  margin-top  : 10px;
+}
+
+.calc-btn-send{
+  background-color      : #319FF3;
+  color                 : #fff;
+  padding-left          : 40px;
+  padding-right         : 40px;
+  padding-top           : 8px;
+  -webkit-border-radius : 5px;
+  -moz-border-radius    : 5px;
+  border-radius         : 5px;
+}
+
+.calc-btn-send:hover{
+  background-color : #60B2F1;
+}
+
+.activity-tit-image{
+  width            : 100%;
+  height           : 40px;
+  background-color : #1047A6;
+  color            : #fff;
+  font-size        : 20px;
+  margin-top       : 10px; 
+  padding-top      : 7px;
+  text-align       : center; 
+}
+
+.calc-activity-image{
+  width            : 100%;
+  height           : 470px;
+  background-image : url(../img/activity-img1.jpg);
+}
+
+#activity-calculator-b{
+  position      : absolute;
+  margin-bottom : 20px;
+  top           : 275px;
+  left          : 300px;
+  display       : none;
+  opacity       : 0;
+}
+
+.personal-recipe{
+  width            : 100%;
+  height           : 700px; 
+  background-color : #f2f2f2;
+  overflow: hidden;
+}
+
+#activity-plan{
+  display : none;
+}
+
+
+.title-recipe{
+  width            : 100%;
+  background-color : #319FF3;
+  height           : 45px;
+  font-size        : 15px;
+  color            : #fff;
+  padding-left     : 10px;
+  padding-top      : 10px; 
+  padding-right    : 10px;
+  margin-bottom    : 20px;
+}
+
+#arr-per-info{
+  position           : relative;
+  width              : 25px;
+  height             : 25px;
+  background         : url(../img/activity-arrow.png);
+  left               : 5px;
+  -webkit-transition : all 1s;
+  -moz-transition    : all 1s;
+  -ms-transition     : all 1s
+  -o-transition      : all 1s;
+  transition         : all 1s;
+}
+
+.arr-transform{
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+
+#text-title-rec{
+  position: relative;
+  left: 35px;
+  top: -22px;
+}
+
+#recipe-date{
+  display : none;
+  margin-right: 0px;
+}
+
+.header-activity-b{
+  width               : 100%;
+  height              : 94px;
+  background-image    : url(../img/activity-img2.jpg);
+  background-position : center;
+  margin-bottom       : 20px;
+}
+
+.label-recipe{
+  display     : block;
+  font-family : 'helveticaneuelt_stdregular';
+}
+
+.acti-inp-half{
+  width : 46% !important; 
+}
+
+#activity-calculator-b input{
+  width         : 100%;
+  margin-bottom : 15px;
+}
+
+.less-margin{
+  margin-top : -20px;
+}
+
+#activity-calculator-b h1{
+  color       : #18247E;
+  font-family : 'helveticaneuelt_std_medRg';
+}
+
+#activity-calculator-b hr{
+  color : #000;
+}
+
+.btn-generate-plan{
+  background-color      : #319FF3;
+  color                 : #fff;
+  padding-left          : 40px;
+  padding-right         : 40px;
+  padding-top           : 8px;
+  -webkit-border-radius : 5px;
+  -moz-border-radius    : 5px;
+  border-radius         : 5px;
+}
+
+.btn-return-quest{
+  background-color      : #6D283F;
+  color                 : #fff;
+  padding-left          : 40px;
+  padding-right         : 40px;
+  padding-top           : 8px;
+  -webkit-border-radius : 5px;
+  -moz-border-radius    : 5px;
+  border-radius         : 5px;
+}
+
+.grey-line-2p{
+  background-color : #d7d7d7;
+  width            : 90%;
+  height           : 2px;
+  margin-bottom    : 35px;
+  margin-left      : 5%;
+}
+
+/********* 
+FIN DE CALCULADORA DE ACTIVIDAD FISICA
+**********/
+
+/********* 
+ESQUEMA DE VACUNACIÓN
+*********/
+
+#vaccination{
+  margin-top    : 300px;
+  height        : 920px;
+  font-family   : 'helveticaneuelt_stdregular';
+}
+#share_vacc{
+  margin-right: 15px;
+  margin-top: 20px;
+  float: right;
+}
+#share_vacc_teen{
+  margin-top: 20px;
+  float: right;
+  margin-right: 15px;
+  display: none;
+}
+#adult-vacc-table{
+  display: none;
+}
+
+.vaccionation-title{
+  font-size : 20px;
+}
+
+.vaccination-input{
+  float: left;
+  height : 60px;
+}
+
+.vacc-input-txt{
+  float      : left;
+  width      : 370px;
+  margin-top : 20px;
+}
+
+.vacc-input-btn{
+  height                : 35px;
+  margin-top            : 10px;
+  margin-right           : 10px;
+  float                 : left;
+  -webkit-border-radius : 5px;
+  -moz-border-radius    : 5px;
+  border-radius         : 5px;
+  color                 : #fff;
+  border                : none !important;
+}
+
+#vacc-btn-kids{
+  background-color : #20a309;
+}
+
+#vacc-btn-kids:hover{
+  background-color : #27bb0d;
+}
+
+#vacc-btn-teen{
+  background-color : #002841;
+}
+
+#vacc-btn-teen:hover{
+  background-color : #003f66;
+}
+
+#vacc-age-container{
+  margin-left: 10px;
+}
+
+.vacc-select{
+  float                 : left;
+  background-color      : #e7e7e7;
+  width                 : 270px;
+  height                : 35px;
+  margin-top            : 10px;
+  -webkit-border-radius : 5px;
+  -moz-border-radius    : 5px;
+  border-radius         : 5px;
+  background-image      : url(../img/arrow.png);
+  background-size       : 25px 10px;
+  background-repeat     : no-repeat;
+  background-position   : 95% 50%;
+  cursor                : pointer;
+}
+
+.vacc-selected{
+  width : 300px;
+}
+
+.vacc-ad-option,
+.vacc-option{
+  position         : relative;
+  width            : 350px;
+  height           : 35px;
+  background-color : #fff;  
+  display          : none;
+  z-index          : 2;
+}
+
+.vacc-option:hover{
+  background-color : #e7e7e7;
+}
+
+.vacc-op-circle{
+  float                 : left;
+  width                 : 14px;
+  height                : 14px;
+  -webkit-border-radius : 50%;
+  -moz-border-radius    : 50%;
+  border-radius         : 50%;
+  background-color      : #aaa;
+  margin-left           : 10px;
+  margin-top            : 12px;
+}
+.vacc-sm-circle{
+  position: relative; width: 14px;height: 14px;-webkit-border-radius : 50%;-moz-border-radius: 50%;border-radius: 50%;background-color: #aaa;top: 50%;left: 50%;margin-left: -7px;margin-top: -7px; 
+}
+
+.vacc-square-p{
+  float: left;width: 24px;height: 24px;margin-left: 20px;margin-top: 3px;background:url(../img/circle-papig.png);
+}
+
+.vacc-square-ap{
+  float : left;width : 24px;height: 24px;margin-left: 35px;margin-top: 3px;background:url(../img/circle-papig.png);
+}
+
+.vacc-t-circle{
+  width: 14px;height: 7px;border-radius: 14px 14px 0 0;-moz-border-radius: 14px 14px 0 0;-webkit-border-radius : 14px 14px 0 0;background-color: #aaa;margin-left : 23px;
+}
+
+.vacc-b-circle{
+  width : 14px;height : 7px;border-radius: 0 0 14px 14px;-moz-border-radius: 0 0 14px 14px;-webkit-border-radius : 0 0 14px 14px;background-color: #999999;margin-left: 23px;
+}
+
+button:focus {outline:0;}
+
+.vacc-option-txt{
+  float       : left;
+  margin-left : 8px;
+  margin-top  : 9px;
+}
+
+#vacc-table-cont{
+  width      : 100%;
+  margin-top : 20px;
+}
+
+.vacc-table{
+  border-bottom : 5px solid #153750;
+}
+
+.vacc-table th{
+  background-color : #153750;height: 35px;color : #fff;padding: 5px;border-left: 2px solid #1d5880;text-align: center;font-family: 'helveticaneuelt_stdregular';
+}
+
+.row-soft td{
+  background-color : #f4f4f4;height: 40px;width: 50px;  border-left: 2px solid #fff;border-bottom: 1px solid #fff; border-top: none;
+}
+
+.row-hard td{
+  background-color : #e7e7e7;height: 40px;width: 50px;border-top: none;border-bottom: 1px solid #fff; 
+}
+
+.first-col{
+  width : 140px;max-width: 140px !important;border: none !important; text-align: left !important;padding-left: 20px;font-size: 12px; cursor: pointer;
+}
+
+.first-row{
+  border-right : none !important;
+}
+
+.sim-border-r{
+  float  : right;
+  height : 40px;
+  width  : 5px;
+}
+
+.vacc-half{
+  height : 20px;width  : 5px; 
+}
+
+.vacc-bicolor{
+  float: right;height: 40px;width: 5px;margin-left: 2px;
+}
+
+.no-border-left{
+  border-left : none !important;
+}
+
+.vacc-name{
+   float: left;max-width: 120px;margin-top: 13px;
+}
+.vacc-name2{
+  float: left;max-width  : 120px;margin-top : 4px;
+}
+
+.vacc-logo{
+  float      : right;
+  width      : 200px;
+  height     : 100px;
+  background : url(../img/logo-vacuna.png);
+}
+
+.vacc-popup{
+  position           : absolute;
+  width              : 0px;
+  height             : 0px;
+  z-index            : 3;
+  background-color   : #fff;
+  -webkit-box-shadow : 3px 5px 8px -2px rgba(138,134,138,0.88);
+  -moz-box-shadow    : 3px 5px 8px -2px rgba(138,134,138,0.88);
+  box-shadow         : 3px 5px 8px -2px rgba(138,134,138,0.88);
+  left               : 210px;
+  overflow           : hidden; 
+  top                : 220px; 
+  /*display            : none;*/
+}
+
+.vacc-top1-pop{
+  float            : left;
+  width            : 100%;
+  height           : 5px;
+  background-color : #252060;
+}
+
+.vacc-top2-pop{
+  float            : left;
+  width            : 100%;
+  height           : 5px;
+  background-color : #ff001f;
+}
+
+.vacc-txt-pop{
+  float     : left;
+  width     : 100%;
+  padding   : 15px;
+  overflow  : scroll;
+  font-size : 13px;
+}
+
+.vacc-arrow-pop{
+  position   : relative;
+  width      : 34px;
+  height     : 47px;
+  left       : -22px;
+  top        : 50%;
+  margin-top : -17px;
+  background : url(../img/arr-pop.png);  
+}
+
+.desc-td{
+  width: 420px !important;text-align: center;padding-left: 3px;padding-right: 3px;
+}
+
+#vacc-select-type2{
+  display: none;
+}
+
+/*#adult-vacc-table{
+  margin-left: auto;
+  margin-right: auto;
+}*/
+
+/** FIN DEL ESQUEMA DE VACUANCIÓN**/
+
+/******
+MEDIA QUERIES 
+******/
+
+@media(max-width: 1000px){
+  /*
+    Generales 
+  */
+  .mob-container{
+    display : block;
+  }
+
+  .desktop-container{
+    display : none;
+  }
+
+  .mob-calc-title{
+    text-align : center;
+  }
+
+  .calculator-title{
+    font-size : 22px;
+  }
+
+  .calculator-result-title{
+    font-size  : 18px;
+    margin-top : 5px;
+  }
+
+  .calc-btn-reset{
+    display : none;
+  }
+
+  .btn-share-calc{
+    display : none;
+  }
+
+  .next-results{
+    width        : 52px;
+    height       : 20px;
+    margin-top   : 20px;
+    margin-right : auto;
+    margin-left  : auto;
+  }
+
+  .ball-next-result{
+    width            : 18px;
+    height           : 18px;
+    border-radius    : 50%;
+    margin-left      : 5px;
+    background-color : #bbb;
+    cursor           : pointer;
+    float            : left; 
+  }
+
+  .ball-selected{
+    background-color : #999;
+  }
+
+  .mob-btn-calc{
+    position         : relative; 
+    width            : 35px;
+    height           : 35px;
+    border-radius    : 50%;
+    cursor           : pointer;
+    margin-top       : 5px;  
+    background-color : #ddd;
+  }
+
+  .mob-btn-calc:hover{
+    background-color : #999;
+  }
+
+  .calc-drag-path{
+    width : 100%;
+  }
+
+  .calc-drag-limits{
+    width : 100%;
+  }
+
+  #send-result-w,
+  #send-result-w-teen{
+    top : 85px;
+  }
+
+  #click-salud{
+    display : none;
+  }
+
+  #mob-cont-btn{
+    border : 1px solid;
+    height : 50px;
+  }
+  /*
+   Fin generales
+  */
+
+  /*Calorico*/
+
+  #mob-caloric-calculator{
+    height      : 840px;
+    margin-top  : 55px;
+  }
+  
+  #caloric-results{
+    height           : 280px;
+    background-color : #fff;
+    overflow         : hidden;
+  }
+
+  #caloric-container{
+    position         : relative;
+    width            : 180px;
+    height           : 180px;
+    margin-top       : 10px;
+    left             : 50%;
+    margin-left      : -90px;
+    padding          : 10px;
+    background-image : url(../img/marco-calorico.png);
+    background-size  : 180px 180px;
+  }
+
+  .caloric-result{
+    font-size : 40px;
+  }
+
+  #calorie-unit{
+    font-size : 25px;
+  }
+
+  #caloric-values{
+    width : 320px;
+  }
+  
+  #caloric-values p{
+    width : 120px;
+  }
+
+  #caloric-reset-mob{
+    top              : -250px;
+    background-image : url(../img/btn-reload.png);
+    left             : 0;
+    background-size  : 35px 35px; 
+  }
+
+  #caloric-share-mob{
+    top              : -290px;
+    left             : 100%;
+    margin-left      : -35px;
+    background-image : url(../img/btn-share.png);
+    background-size  : 35px 35px; 
+  }
+
+  #caloric-values{
+    position    : relative;
+    top         : -230px;
+    height      : 120px;
+    left        : 50%;
+    margin-left : -210px;
+    opacity     : 0;
+    filter      : alpha(opacity=0); 
+  }
+
+  #caloric-res-exp{
+    position    : relative;
+    top         : -240px;
+    left        : 50%;
+    margin-left : -125px;
+    max-width   : 250px;
+    visibility  : hidden;
+    text-align  : center;
+  }
+
+  #mob-caloric-keep-val{
+    font-size : 25px;
+  }
+
+  #mob-caloric-reduce-val{
+    font-size : 25px;
+  }
+
+  #caloric-controls{
+    border           : none;
+    margin           : none !important;
+    margin-left      : auto;
+    margin-right     : auto;
+    background-color : #f3f3f3;
+  }
+  
+  /*
+    funciones de imc
+  */
+
+   #imc-calculator{
+    display : none;
+  }
+
+  #mob-imc-calculator{
+    margin-top   : 55px;
+    min-height       : 840px;
+    padding-left : 0px;
+  }
+
+  #mob-imc-result{
+    height : 345px;
+  }
+
+  #imc-arc-container{
+    overflow        : hidden;
+    height          : 190px;
+    width           : 280px;
+    margin-left     : auto;
+    margin-right    : auto;
+    background-size : 280px 152px;
+  }
+
+  #mob-antialiasing-inner-arc{
+    position    : relative;
+    z-index     : 4;
+    top         : 27px;
+    margin-left : 2px;
+  }
+
+  #mob-antialiasing-outer-arc{
+    position : relative;
+    z-index  : 4;
+    top      : -118px;
+  }
+
+  #mob-imc-arc{
+    position : relative;
+    z-index  : 3;
+    top      : -263px;
+  }
+
+  #mob-imc-image{
+    position : relative;
+    top      : -365px;
+  }
+
+  #mob-imc-image img{
+    max-width : 75px;
+  }
+
+  #imc-values{
+    height : 80px;
+  }
+
+  #mob-imc-value{
+    color : #ffa500;
+  }
+
+  #imc-mob-rec{
+    position : relative;
+    top      : -77px;
+    opacity  : 0;
+    filter   : alpha(opacity=0);
+  }
+
+  #mob-recommended-weight{
+    color     : #333AC0;
+    font-size : 25px;
+  }
+
+  #imc-reset-mob{
+    top              : -35px;
+    background-image : url(../img/btn-reload.png);
+    left             : 0;
+    background-size  : 35px 35px; 
+  }
+
+  #imc-share-mob{
+    top              : -75px;
+    left             : 100%;
+    margin-left      : -35px;
+    background-image : url(../img/btn-share.png);
+    background-size  : 35px 35px; 
+  }
+
+  #imc-control{
+    border     : none;
+    margin-top : 0px;
+  }
+
+  /*
+  fin del estilo de IMC
+  */
+
+  /*
+  estilo de calculadora renal
+  */
+
+  #renal-calculator{
+    display : none;
+  }
+
+  #mob-renal-calculator{
+    margin-top    : 55px;
+    padding-left  : 0px;
+    padding-right : 0px;
+  }
+
+  #renal-mob-result{
+    min-height   : 500px;
+    overflow : hidden;
+  }
+
+  .calculator-subtitle{
+    max-width : 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #renal-animation-container{
+    width       : 280px;
+    height      : 280px;
+    margin-left : -140px;
+  }
+
+  #renal-circle-frame{
+    width             : 281px;
+    height            : 281px;
+    background-size   : 281px 281px;
+    background-repeat : no-repeat;
+    top               : -3px;
+    left              : -3px; 
+  }
+
+  #mob-water-canvas{
+    position : relative;
+    top      : -685px;
+    left     : 1px;
+  }
+
+  #calc-renal-image{
+    top : -220px;
+  }
+
+  #calc-renal-values1{
+    position : relative;
+    overflow : hidden;
+    top      : -85px;
+    opacity  : 0;
+    filter   :  alpha(opacity=0);
+  }
+
+  #ren-next-res{
+    position : relative;
+    top      : -100px;
+  }
+
+  #ren-reset-mob{
+    top              : -135px;
+    background-image : url(../img/btn-reload.png);
+    background-size  : 35px 35px; 
+  }
+
+  #ren-share-mob{
+    top              : -175px; 
+    left             : 100%;
+    background-size  : 35px 35px; 
+    background-image : url(../img/btn-share.png);
+    margin-left      : -35px;
+  }
+ 
+  #renal-controls{
+    border     : none;
+    margin-top : 0px;
+  }
+  
+  #mob-pop-creatinine{
+    display : none;
+  }
+
+  /*
+  fin de estilo de calculadora renal.
+  */
+
+  /*
+    Estilos de calculadora cardiovascular
+  */
+  #cardio-calculator{
+    display : none;
+  }
+
+  #mob-cardio-calculator{
+    margin-top   : 55px;
+    padding      : 0px;
+    margin-left  : 0px;
+    margin-right : 0px;
+  }
+
+  #cardio-results{
+    overflow: hidden;
+  }
+
+  #mob-cardio-table{
+    width        : 100%;
+    margin-left  : auto;
+    margin-right : auto;
+
+  }
+
+  .risk-table{
+    width        : 100%;
+    margin-left  : auto;
+    margin-right : auto;
+  }
+
+  .gen-td{
+    background-color : #e7e7e7;
+  }
+
+  #mob-cardio-percent{
+    position : relative;
+    opacity  : 0;
+    filter   :  alpha(opacity=0);
+  }
+
+  #car-controls{
+    height : 40px;
+  }
+
+  #car-reset-mob{
+    top              : -44px;
+    background-image : url(../img/btn-reload.png);
+    background-size  : 35px 35px; 
+  }
+
+  #car-share-mob{
+    top              : -84px; 
+    left             : 100%;
+    background-size  : 35px 35px; 
+    background-image : url(../img/btn-share.png);
+    margin-left      : -35px;
+  }
+
+  #car-next-res{
+    position : relative;
+    top      : -10px;
+  }
+
+  #mob-caloric-r2{
+    opacity : 0;
+    top     : -118px;
+  }
+
+  #control-cardio{
+    border     : none;
+    margin-top : 0px;
+  }
+
+  #mob-pop-sistolica{
+    left    : 30px;
+    top     : 310px;
+    display : none;
+  }
+
+  #mob-pop-cholesterol{
+    left    : 30px;
+    top     : 440px;
+    display : none;
+  }
+
+}
+
+
+

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+		<title>Portafolio Digital</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<link rel="stylesheet" type="text/css" href="css/calculator.css">
+		<link rel="stylesheet" type="text/css" href="fonts/fonts.css">
+		<link type="text/css" rel="stylesheet" href="css/popModal.css">
+		
+		<script src="js/jquery-1.11.2.min.js"></script>		
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/main.js"></script>
+		<script src="js/calculator.js"></script>
+	</head>
+	<body>
+		<header>
+   		</header>	
+  		<nav>
+    	</nav>
+	    <section id="nav-menu">
+	    </section>
+	     <section id="menu_mobil">
+		</section>
+	    <script type="text/javascript">
+	      header();
+	      menu_noticias();
+	    </script>
+	    <div id="cuadro-login" style="margin-top: 10px !important;">
+	      <img src="img/cerrar.png" id="btn-cerrar-login">
+	      <p class="titulo-registro-index">Inicio de Sesión</p>
+	      <fb:login-button scope="public_profile,email" onlogin="checkLoginState();" size="large">
+	          <span id="overflow">Inicia sesión con</span> facebook
+	        </fb:login-button>
+	          <br><br>
+	          <img src="img/linea.png" class="linea-registro-index"> o <img src="img/linea.png" class="linea-registro-index"> <br>
+	          <p class="seccion-registro-index">
+	            E-mail
+	          </p><br>
+	          <input type="text" name="email" id="email" class="form-registro-index"><br>
+	          <p class="seccion-registro-index">
+	            Contraseña
+	          </p><br>
+	          <input type="password" name="password" id="password" class="form-registro-index"><br>
+	          <a href="#">
+	            <p class="rec-password">
+	              ¿Olvidaste tu contraseña?
+	            </p>
+	          </a>
+	          <img src="img/inicio_sesion.png" class="btn-face-login"> <br> <br><br>
+	          <p class="link-registro">
+	            ¿Aún no tienes cuenta? <a href="#" id="register">Regístrate</a>
+	          </p>
+	    </div>
+	    <div id="cuadro-registro" style="margin-top: 10px !important;">
+	      <img src="img/cerrar.png" id="btn-cerrar-registro">
+	      <p class="titulo-registro-index">Registro</p>
+	          <p class="seccion-registro-index" style="margin-top:-20px">
+	            Nombre
+	          </p><br>
+	          <input type="text" name="email" id="email" class="form-registro-index"><br>
+	          <p class="seccion-registro-index">
+	            E-mail
+	          </p><br>
+	          <input type="text" name="email" id="email" class="form-registro-index"><br>
+	          <p class="seccion-registro-index">
+	            Contraseña
+	          </p><br>
+	          <input type="password" name="password" id="password" class="form-registro-index"><br>
+	          <p class="seccion-registro-index">
+	            Confirma contraseña
+	          </p><br>
+	          <input type="password" name="password" id="password" class="form-registro-index"><br>
+	          <img src="img/cancelar.png" class="btn-registro" id="cancela" style="margin-left: 10px">
+	          <img src="img/aceptar.png" class="btn-registro">
+	    </div>
+	    <div id="send-result-w">
+        	<div class="top-send-res">Compartir Resultados</div>
+        	<div class="form-result-w">
+        		<p class="centered-text">Envía los resultados para recordar a tus pacientes como mejorar sus hábitos y estilo de vida.</p>
+        		<form id="form-send-renal">
+        			<div class="form-group">
+					    <label for="inputNombreR">Nombre</label>
+					    <input type="text" class="form-control" id="inputNombreR" placeholder="Nombre">
+				  	</div>
+				  	<div class="form-group">
+					    <label for="inputEmailR">Correo</label>
+					    <input type="email" class="form-control" id="inputEmailR" placeholder="Email">
+				  	</div>
+				  	<button type="submit" id="btn-submit-imc" class="btn btn-primary">Enviar</button>
+				  	<button type="button" id="calc-cancel-sub" class="btn btn-default">Cancelar</button>
+        		</form>
+        	</div>
+        	<div class="foot-send-res"></div>
+        </div>
+        <!-- 
+        	VERSIÓN MÓVIL
+        -->
+        <section id="mob-renal-calculator" class="container mob-container">
+			<div class="row container-fluid">
+				<div class="col-md-12 col-sm-12 centered-text">
+					<div class="calculator-title"> Calculadora de función renal</div>
+				</div>
+				<div id="renal-mob-result" class="col-md-12 col-sm-12 centered-text">
+                    <div id="mob-renal-text-res" class="calculator-subtitle"></div>
+                    <div id="renal-animation-container">
+                    	<div id="renal-circle-frame"></div>
+                    	<div id="calc-renal-image"></div>
+                    	<canvas id="mob-water-canvas" width="270" height="750"></canvas>
+                    </div>
+                    <div id="calc-renal-values">
+                        <p class="bold-text">Su Depuracion de Creatinina es:</p>
+                        <h3 id="mob-creatinine-value" class="bold-text">0 ml/min</h3>
+                    </div>
+                    <div id="calc-renal-values1" class="calc-explanation">
+                    	<p>La tasa de Filtración Glomerular (TFG) (estimada con el DCr) te dice que tanto está funcionando el riñon. Si la enfermedad en el riñón progresa, la TFG disminuye.</p>
+                    	<p>Resultados con base en la fórmula <span class="bold-text">Crockroft-Gault</span></p>
+                    </div>
+                    <div id="ren-next-res" class="next-results"> 
+                    	<div class="ball-next-result ball-selected" id="btn-ren-res1"></div>
+                    	<div class="ball-next-result" id="btn-ren-res2"></div>
+                   	</div>
+                    <div id="ren-reset-mob" class="mob-btn-calc">
+					</div>
+					<div id="ren-share-mob" class="mob-btn-calc">
+					</div>
+				</div>
+				<div id="mob-renal-params" class="col-md-12 col-sm-12">
+					<div id="renal-controls" class="calc-controls-container">
+						<div class="calc-control-item">
+							<label class="calc-item-name">Sexo</label>
+							<label  class="calc-label-square">Masculino</label>
+							<div class="calc-square-sel" id="mob-renal-male" group="gender"></div>
+							<label class="calc-label-square">Femenino</label>
+							<div class="calc-square-sel" id="mob-renal-female" group="gender"></div>
+						</div>
+						<div class="calc-control-item">
+							<p>* Edad <input type="text" class="calc-input-value" id="mob-renal-input-age">Años</p>
+							<div class="calc-drag-path"></div>
+							<div id="mob-renal-drag-age" class="mob-drag-circle">0</div>
+                            <div class="calc-drag-limits">
+                                <span class="calc-limit-left">0 años</span>
+                                <span class="calc-limit-right">90 años</span>
+                            </div>
+						</div>
+						<div class="calc-control-item">
+							<p>Peso <input type="text" class="calc-input-value" id="mob-renal-input-weight">v</p>
+							<div class="calc-drag-path"></div>
+							<div id="mob-renal-drag-weight" class="mob-drag-circle">0</div>
+                            <div class="calc-drag-limits">
+                                <span class="calc-limit-left">0 Kg</span>
+                                <span class="calc-limit-right">150 Kg</span>
+                            </div>
+						</div>
+						<div class="calc-control-item">
+							<p>* Creatinina <span class="calc-info-field" id="mob-cre-pop-over"></span><input type="text" class="calc-input-value" id="mob-renal-input-creatinine">mg/dL</p>
+							<div id="mob-pop-creatinine" class="info-popup">
+                            	Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            </div>
+							<div class="calc-drag-path"></div>
+							<div id="mob-renal-drag-creatinine" class="mob-drag-circle">0</div>
+                            <div class="calc-drag-limits">
+                                <span class="calc-limit-left">0 mg/dL</span>
+                                <span class="calc-limit-right">3 mg/dL</span>
+                            </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- 
+        	FIN DE LA VERSIÓN MÓVIL
+        -->
+		<section id="renal-calculator" class="container">
+			<div class="row container-fluid">
+				<div class="col-md-12">
+					<div class="calculator-title"> Calculadora de función renal</div>
+					<div style="float:right;" class="hintModal"><div class="hintModal_container">Se usa para estimar la filtración glomerular y poder valorar a partir de ella la función renal. Este cálculo es particularmente útil en los estadios iniciales de la falla renal y se basa en la fórmula de Cockcroft y Gault.</div><img style="width:80%;" src="img/aviso.png"></div>
+				</div>
+				<div class="col-md-5">
+					<div id="renal-controls" class="calc-controls-container">
+						<div class="calc-control-item">
+							<label class="calc-item-name">Sexo</label>
+							<label  class="calc-label-square">Masculino</label>
+							<div class="calc-square-sel" id="renal-male" group="gender"></div>
+							<label class="calc-label-square">Femenino</label>
+							<div class="calc-square-sel" id="renal-female" group="gender"></div>
+						</div>
+						<div class="calc-control-item">
+							<p>* Edad <input type="text" class="calc-input-value" id="renal-input-age">Años</p>
+							<div class="calc-drag-path"></div>
+							<div id="renal-drag-age" class="calc-drag-circle">0</div>
+                            <div class="calc-drag-limits">
+                                <span class="calc-limit-left">0 años</span>
+                                <span class="calc-limit-right">90 años</span>
+                            </div>
+						</div>
+						<div class="calc-control-item">
+							<p>Peso <input type="text" class="calc-input-value" id="renal-input-weight">Kgs</p>
+							<div class="calc-drag-path"></div>
+							<div id="renal-drag-weight" class="calc-drag-circle">0</div>
+                            <div class="calc-drag-limits">
+                                <span class="calc-limit-left">0 Kg</span>
+                                <span class="calc-limit-right">150 Kg</span>
+                            </div>
+						</div>
+						<div class="calc-control-item">
+							<p>* Creatinina <span class="calc-info-field" id="cre-pop-over">(?) </span><input type="text" class="calc-input-value" id="renal-input-creatinine">mg/dL</p>
+							<div id="pop-creatinine" class="info-popup">
+                            	Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            </div>
+							<div class="calc-drag-path"></div>
+							<div id="renal-drag-creatinine" class="calc-drag-circle">0</div>
+                            <div class="calc-drag-limits">
+                                <span class="calc-limit-left">0 mg/dL</span>
+                                <span class="calc-limit-right">3 mg/dL</span>
+                            </div>
+						</div>
+					</div>
+					<button id="btn-reset-renal" class="calc-btn-reset">Re-iniciar</button>
+					<label></label>
+				</div>				
+				<div class="col-md-6 col-md-offset-1 centered-text">
+                    <div  class="calculator-result-title" >Resultado</div>
+                    <div id="renal-text-res" class="calculator-subtitle"></div>
+                    <div id="renal-animation-container">
+                    	<div id="renal-circle-frame"></div>
+                    	<div id="calc-renal-image"></div>
+                    	<canvas id="water-canvas" width="350" height="850"></canvas>
+                    </div>
+                    <div id="calc-renal-values">
+                        <p class="bold-text">Su Depuracion de Creatinina es:</p>
+                        <h3 id="creatinine-value" class="bold-text">0 ml/min</h3>
+                        <div class="grey-line-thin"></div>
+                    </div>
+                    <div class="calc-explanation">
+                    	<p>La tasa de Filtración Glomerular (TFG) (estimada con el DCr) te dice que tanto está funcionando el riñon. Si la enfermedad en el riñón progresa, la TFG disminuye.</p>
+                    	<p>Resultados con base en la fórmula <span class="bold-text">Crockroft-Gault</span></p>
+                    </div>
+                    <button id="btn-share-renal-calc" class="btn-share-calc">Compartir</button>
+				</div>
+			</div>
+		</section>
+		<section id="click-salud_renal" class="">
+            <div class="container">
+            	<div class="row">
+	            	<div id="calc-renal-rec" class="calc-recomendation col-md-10 col-md-offset-1">
+						<div id="renal-rec-0" class="calc-text-recom">
+							<p class="bold-text"><span style="color:#A9E2F3">ESTADIO 0</span> Recomendaciones con base en los resultados obtenidos para retardar la progresión de daño renal:</p>
+							<ol>
+								<li>Personas sanas: Manteninmiento de estilo de vida saludable mediante alimentación balanceada y actividad física regular.</li>
+								<li>Personas Sanas con factores de riesgo: modificación de estilos de vida mediante alimentación balanceada y actividad física regular.</li>
+								<li>Pacientes con alguna enfermedad crónica: terapia de nefroprevensión, modificación de estilos de vida y, en caso de que se considera necesario tratamiento farmacolológico.</li>
+							</ol>
+						</div>
+						<div id="renal-rec-1" class="calc-text-recom">
+							<p class="bold-text"><span style="color:#42D55F">ESTADIO 1</span> Recomendaciones con base en los resultados obtenidos para retardar la progresión de daño renal:</p>
+							<ol>
+								<li>Monitoreo continuo para el diagnostico de TFG</li>
+								<li>Plan de manejo adecuado (Paso 4)</li>
+								<li>Reducción de factores de riesgo para enfermedades cardiovasculares</li>
+							</ol>
+						</div>
+						<div id="renal-rec-2" class="calc-text-recom">
+							<p class="bold-text"><span style="color:#F0EB46">ESTADIO 2</span> Recomendaciones con base en los resultados obtenidos para retardar la progresión de daño renal:</p>
+							<ol>
+								<li>Estimacion y retraso de la progresión mediante terapia nefroprotectora</li>
+								<li>Plan de manejo adecuado (Paso 4)</li>
+							</ol>
+						</div>
+						<div id="renal-rec-3" class="calc-text-recom">
+							<p class="bold-text"><span style="color:#E69B4B">ESTADIO 3</span> Recomendaciones con base en los resultados obtenidos para retardar la progresión de daño renal:</p>
+							<ol>
+								<li>Plan de manejo adecuado (Paso 4)</li>
+								<li>Evaluación y tratamiento de complicaciones</li>
+								<li>Evaluación para referencia oportuna al nefròlogo</li>
+							</ol>
+						</div>
+						<div id="renal-rec-4" class="calc-text-recom">
+							<p class="bold-text"><span style="color:#E96244">ESTADIO 4</span> Recomendaciones con base en los resultados obtenidos para retardar la progresión de daño renal:</p>
+							<p>Preparación de terapia de reemplazo renal: diálisis peritoneal, hemodiálisis o transplante renal</p>
+						</div>
+						<div id="renal-rec-5" class="calc-text-recom">
+							<p class="bold-text"><span style="color:#F54141">ESTADIO 5</span> Recomendaciones con base en los resultados obtenidos para retardar la progresión de daño renal:</p>
+							<p>Terapia de reemplazo renal (sobre todo si hay uremia)</p>
+						</div>
+					</div>
+				</div>
+				<div class="text_all_calc_renal" >
+					<p>
+						Para mayor información favor de ingresar <a href="http://www.clikisalud.net/rinon/">aqui</a>
+					</p>
+				</div>
+            </div>
+        </section>
+	<footer>
+			<div  class="container" style="width:430px; height:50px;">
+                
+				<a href="http://www.fundacioncarlosslim.org/"><div id="logo-foot"><img src="img/logo-black.png"></div></a>
+				<a href="http://www.fundacioncarlosslim.org/"><div id="logo-foot-mob"><img src="img/logo-black.png"></div></a>
+			</div>
+		</footer>
+		<div class="bottom-line-right">
+			<p>Aviso de privacidad</p>
+		</div>
+		<div class="bottom-line">
+			<div id="aviso-priv" onclick="loadPrivacy()"><img style="max-width:22px;" src="img/aviso.png">&nbsp;Aviso de privacidad</div>
+		</div>
+
+		<div id="lowRisk" style="display:none">
+				Actividad física con bajo riesgo
+			</div>
+
+			<div id="highRisk" style="display:none">
+				Actividad física con alto riesgo. Realizar pruebas médicas antes de prescribir actividad física.
+			</div>
+
+			<div id="dialog_content" class="dialog_content" style="display:none;">
+				<div class="dialogModal_header">Descargar ahora <font class="blueModalTitle">Portafolio Digital</font> en el Móvil y USB. Es gratis.</div>
+				<div class="dialogModal_content">
+				<img src="img/downloadAppModal.jpg" style="width:100%;">
+				<a href="https://play.google.com/store/apps/details?id=com.icom.portafoliosalud&hl=es_419" target="_blank"><div style="width: 165px; position: relative; z-index: 50;bottom: 237px;left: 61%;height: 50px;background-color: transparent;cursor: pointer;"></div></a><a href="http://icom-systems.com/portafolio-digital/entrega9Dic/dist_091215.zip" target="_blank"><div style="width: 165px; position: relative; z-index: 50;bottom: 180px;left: 61%;height: 50px;background-color: transparent;cursor: pointer;"></div></a>
+				</div>
+				<!--<div class="dialogModal_footer">
+					<button type="button" class="btn btn-primary" data-dialogmodal-but="next">Next</button>
+					<button type="button" class="btn btn-default" data-dialogmodal-but="cancel">Cancel</button>
+				</div>-->
+			</div>
+
+			<div id="dialog_content2" class="dialog_content2" style="display:none;">
+				<div class="dialogModal_header">Sobre la información de <font class="blueModalTitle">medicamentos</font> en el  <font class="blueModalTitle">VADEMECUN</font>  del Portafolio Digital de la FCS</div>
+				<div class="dialogModal_content" style="margin:10px;">
+					<div style="padding-top:50px;">La FCS establece que las recomendaciones que se proporcionan en esta aplicación son de carácter informativo  y <font class="blueModalTitle">no substituyen</font> de ninguna manera las recomendaciones médicas y/o un especialista en la materia. El uso que se haga de esta aplicación <font class="blueModalTitle">es responsabilidad exclusiva del usuario.</div><div style="padding-top:15px;"></font> La base de datos de medicamentos se actualiza periódicamente con el objeto de recoger las últimas modificaciones y novedades habidas e integradas por parte del equipo proveedor. La FCS no tiene ningún fin comercial por lo que <font class="blueModalTitle">NO recomienda marca</font> alguna.</div>
+					<div align="center" style="padding-top:50px;padding-bottom:50px;"><button onclick="send2vademecum()" class="calc-btn-send">Aceptar</button></div>
+				</div>
+				<!--<div class="dialogModal_footer">
+					<button type="button" class="btn btn-primary" data-dialogmodal-but="next">Next</button>
+					<button type="button" class="btn btn-default" data-dialogmodal-but="cancel">Cancel</button>
+				</div>-->
+			</div>
+
+			<div id="dialog_content3" class="dialog_content3" style="display:none;">
+				<div class="dialogModal_header">AVISO DE PRIVACIDAD</div>
+				<div class="dialogModal_content" style="margin:10px;">
+					<div style="padding-top:50px;">Aviso dirigido a los titulares de datos personales que obran en posesión de la Fundación Carlos Slim, A.C. 
+Fundación Carlos Slim, A.C. (en lo sucesivo la “Fundación”), con domicilio en calle Lago Zurich No. 245, Edificio Presa Falcón, Piso 20, Colonia Granada Ampliación, Delegación Miguel Hidalgo, C.P. 11529, en México, Distrito Federal, hace de su conocimiento que los datos personales de usted, incluyendo los sensibles, que actualmente o en el futuro obren en nuestras bases de datos, serán tratados y/o utilizados por la Iniciativa de capacitación y/o por aquellos terceros que, por la naturaleza de sus trabajos o funciones tengan la necesidad de tratar y/o utilizar sus datos personales; con el propósito de i) cumplir con aquellas obligaciones que se derivan de la relación jurídica existente entre usted como titular de los datos personales y la Iniciativa de capacitación, ii) utilizar y/o tratar sus datos personales con fines estadísticos, iii) utilizar y/o tratar sus datos personales con fines publicitarios y de fomento, promoción y difusión de acciones sociales, iv) difundir, comunicar y/o publicar sus datos personales en cualquier medio de comunicación electrónico, v) utilizar sus datos personales como base de referencia, y vi) enviarle a su domicilio invitaciones a eventos organizados por la Iniciativa de capacitación. 
+La “Fundación” podrá transferir los datos personales que obren en sus bases de datos a terceras personas, nacionales o extranjeras, como pudieran ser de manera enunciativa: Asociaciones Civiles, Instituciones de Asistencia Privada, Organismos Descentralizados, Instituciones de Crédito y Hospitales Públicos y/o Privados, salvo que los titulares respectivos manifiesten expresamente su oposición, en términos de lo dispuesto por la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (la Ley). 
+Los titulares podrán ejercer sus derechos de acceso, rectificación, cancelación u oposición y la revocación del consentimiento a partir del 6 de enero de 2012, mediante el envío de una solicitud a la siguiente dirección electrónica dg@fundacioncarlosslim.org Todas las solicitudes que sean enviadas al Instituto, independiente del medio utilizado por los titulares, deberán: 
+Incluir el nombre del titular y domicilio u otro medio para comunicarle la respuesta a su solicitud. 
+Acompañar los documentos oficiales que acrediten la identidad del titular. 
+Incluir una descripción clara y precisa de los datos personales respecto de los cuales ejercitará los derechos que les confiere la Ley. 
+Incluir cualquier elemento o documento que facilite la localización de los datos personales de que se traten. 
+La “Fundación” tendrá el derecho de cambiar, modificar, complementar y/o alterar el presente aviso, en cualquier momento, en cuyo caso se hará de su conocimiento a través de su publicación en la siguiente página web: fundacioncarlosslim.org
+
+				</div>
+				<!--<div class="dialogModal_footer">
+					<button type="button" class="btn btn-primary" data-dialogmodal-but="next">Next</button>
+					<button type="button" class="btn btn-default" data-dialogmodal-but="cancel">Cancel</button>
+				</div>-->
+			</div>
+
+
+		<script src="js/popModal.js"></script>
+
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		  	ga('create', 'UA-65771429-1', 'auto');
+		  	ga('send', 'pageview');
+		</script>
+	</body>
+</html>

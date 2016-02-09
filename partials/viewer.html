@@ -1,0 +1,22 @@
+<nav ng-class="getNavStyle(scroll)" class="pdf_nav_controls">
+  <button ng-click="goPrevious()"><</span></button>
+  <button ng-click="goNext()">></span></button>
+
+<!--
+  <button ng-click="zoomIn()">+</span></button>
+  <button ng-click="zoomOut()">-</span></button>
+-->
+
+  <span>Página: </span>
+  <input type="text" min=1 ng-model="pageNum">
+  <span> / {{pageCount}}</span>
+
+</nav>
+
+<hr>
+
+<div class="col-md-12">
+	<canvas id="pdf" class="rotate0" style="width:100% !important; height: 100% !important ">
+	  Lo siento, tu navegador no soporta canvas
+	</canvas>
+</div>

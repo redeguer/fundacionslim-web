@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Practicas Clínicas</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/practicas.css">
+    <link rel="stylesheet" type="text/css" href="fonts/fonts.css">
+    <link type="text/css" rel="stylesheet" href="css/popModal.css">
+    
+    <script src="js/jquery-1.11.2.min.js"></script> 
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/practicas.js"></script> 
+  </head>
+  <body>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-65771429-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+    <style type="text/css">
+      #cuadro-login,
+      #cuadro-registro{
+        margin-top: 50px !important;
+      }
+      @media(max-width: 1000px){
+        #cancela{
+          margin-top: -40px !important;
+        }
+      }
+      @media(max-width: 840px){
+        #cancela{
+          margin-top: -35px !important;
+        }
+      }
+      @media(max-width: 800px){
+        #cancela{
+          margin-top: -45px !important;
+        }
+      }
+      @media(max-width: 700px){
+        #btn-aceptar-registro{
+          margin-top: 7px !important;
+        }
+      }
+      @media(max-width: 650px){
+        #cancela{
+          margin-top: -35px !important;
+        }
+      }
+      @media(max-width: 560px){
+        #cancela{
+          margin-top: -25px !important;
+        }
+      }
+      @media(max-width: 450px){
+        #cancela{
+          margin-top: -33px !important;
+          margin-left: 0px !important;
+          margin-right: -30px !important;
+        }
+      }
+      @media(max-width: 450px){
+        #cancela{
+          margin-top: -29px !important;
+        }
+      }
+      @media(max-width: 450px){
+        #cuadro-login,
+        #cuadro-registro{
+          margin-top: 90px !important;
+        }
+      }
+    </style>
+    <div id="cuadro-login" style="margin-top: 200px;margin-left: 40%">
+      <img src="img/cerrar.png" id="btn-cerrar-login">
+      <p class="titulo-registro-index">Inicio de Sesión</p>
+      <fb:login-button scope="public_profile,email" onlogin="checkLoginState();" id="btn_facebook" size="large">
+          <span id="overflow">Inicia sesión con</span> facebook
+        </fb:login-button>
+        <br><br>
+        <img src="img/linea.png" class="linea-registro-index"> o <img src="img/linea.png" class="linea-registro-index"> <br>
+        <form method="POST" id="form-login">
+          <p class="seccion-registro-index">
+            E-mail
+          </p><br>
+          <input type="text" name="email" id="email-login" class="form-registro-index">
+          <br>
+          <p class="seccion-registro-index">
+            Contraseña
+          </p><br>
+          <div class="alert alert-danger" role="alert" id="alert-danger-login" style="width:220px;font-size: 20px;position: relative;float:right; margin-top: -30px;margin-bottom:-10px;margin-right: 39px; display:none"><strong>Datos Incorrectos!</strong></div>
+          <input type="password" name="password" id="password-login" class="form-registro-index"><br>
+          <a href="#">
+            <p class="rec-password">
+              ¿Olvidaste tu contraseña?
+            </p>
+          </a>
+          <img src="img/cargando.gif" style="width:30px;float:right;margin-right:100px;display:none" id="cargando-login">
+          <input type="image" src="img/inicio_sesion.png" class="btn-face-login" id="btn-login-aceptar"/> <br> <br><br>
+        </form>
+        <p class="link-registro">
+          ¿Aún no tienes cuenta? <a href="#" id="register">Regístrate</a>
+        </p>
+    </div>
+    <div id="cuadro-registro" style="margin-top: 200px;margin-left: 40%">
+      <img src="img/cerrar.png" id="btn-cerrar-registro">
+      <p class="titulo-registro-index">Registro</p>
+      <form method="POST" id="form-registro" action="perfil_registro.php">
+        <p class="seccion-registro-index" style="margin-top:-20px">
+          Nombre
+        </p><br>
+        <input type="text" name="nombre" id="nombre" class="form-registro-index"><br>
+        <p class="seccion-registro-index">
+          E-mail
+        </p><br>
+        <input type="text" name="email" id="email-registro" class="form-registro-index"><br>
+        <p class="seccion-registro-index">
+          Contraseña
+        </p><br>
+        <input type="password" name="password" id="password-registro" class="form-registro-index"><br>
+        <p class="seccion-registro-index">
+          Confirma contraseña
+        </p><br>
+        <input type="password" name="password_confirm" id="password_confirm" class="form-registro-index"><br>
+        <img src="img/cancelar.png" class="btn-registro" id="cancela" style="margin-left: 10px;margin-top:-25px">
+        <input type="image" src="img/aceptar.png" class="btn-registro" style="margin-top: 15px;"/>
+      </form>
+    </div>
+    <script>
+      facebook_login();
+    </script>
+    <style type="text/css">
+      #lg-mobil,
+      #lg-mobil-fb {
+        margin-top: 50px !important;
+      }
+    </style>
+    <header>
+      <div id="top-blue-line"></div>      
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-xs-12">
+            <div id="logo"><img src="img/logo.png" style="max-height:40px;"></div>
+            <div id="portal-name"><i>Portafolio Digital</i></div>
+            <div id="social-networks">
+              <div id="barra-buscador-nav" class="col-md-4 col-sm-9 col-xs-9">
+                        <form action="consulta.php" method="GET" id="form-id">
+                          <div class="input-group">
+                            <input type="text" name="word" id="busca-nav" class="form-control" placeholder="Diabetes, Hipertensión, Obesidad, etc." aria-describedby="basic-addon2">
+                            <span class="input-group-addon" id="basic-addon2"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
+                          </div>
+                        </form>
+                      </div> 
+                      <div id="sub-social-networks">
+                <div id="sn-tw" class="sn-ind"></div>           
+                <div id="sn-fb" class="sn-ind"></div>
+                <div id="sn-lgin" class="sn-ind"></div>   
+                      </div>  
+                  </div>
+            <div id="btn-menu-mob">&#9776;</div>
+            <div id="btn-search-mob">
+              <img src="img/search-icon.png" class="search-img">
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <nav>
+    </nav>
+    <section id="nav-menu">
+    </section>
+    <script type="text/javascript">
+      header();
+      menu_noticias();
+    </script> 
+    <section id="catalogo-maestro" class="" style="margin-top:240px !important">
+      <div class="">
+        <a href="http://www.cenetec.salud.gob.mx/contenidos/gpc/catalogoMaestroGPC.html" target='_blank'>
+          <div id="img-catalogo" class="">
+          </div>
+        </a>
+      </div>
+    </section>
+    <!--<div class="practicas-background" style="top:630px !important">-->
+    </div>
+    <section id="vista-movil-practicas">
+      <div id="carousel-example-generic" class="carousel slide slide-movil-practicas" data-ride="carousel">
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+          <div class="item active" id="item1">
+            <div id="titulo-movil1" class="titulo-movil">
+              <p>
+                <span class="title-txt-slide">Lorem ipsum dolor sit amet, consectetur adipiscing elit</span><br><br>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
+              <button class='btn btn-consulta-movil-pdf'>CONSULTAR</button>
+            </div>
+          </div>
+        </div>
+        <!-- Indicators -->
+        <div>
+          <ol id="carr_gene_sup" class="carousel-indicators">
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+    <script type="text/javascript">
+      carrusel_mob();
+    </script>
+    <section id="slider-practicas-one" class="container" >
+      <div class="row">
+        <div id="carousel" class="carousel slide col-md-12" data-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel" data-slide-to="1"></li>
+            <li data-target="#carousel" data-slide-to="2"></li>
+          </ol>
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner" role="listbox" id="carousel-practicas-head">
+            <div class="item active" id="item_active_car" style="margin-top:40px">
+              <div class="row">
+                <div class="img-slider col-md-1 col-md-offset-0 col-lg-1 col-lg-offset-0">
+                  <img src="img/cargando.gif" style="width:60px;margin-right:0px;margin-top:100px" id="cargando-login">
+                </div>
+                <div class="txt-slider col-sm-9 col-md-10 col-md-offset-1 col-lg-7 col-lg-offset-2">
+                  <div class="txt-slider col-sm-9 col-md-10 col-md-offset-1 col-lg-7 col-lg-offset-2">
+                    <h3>CARGANDO...</h3>
+                    <p>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="section-cronicas-mobil" class="container">
+      <div id="sec_cronicas" class="row container-fluid" onclick="cat_mob_pdf(this)">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <div id="nom_cronicas-mobil" class="nombre-seccion-mobil">
+            <div class="center-vert">
+              <img src="img/cronicas.png">
+              <p>Enfermedades Crónicas</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="sec_materna" class="row container-fluid" onclick="cat_mob_pdf(this)">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <div id="nom_materna-mobil" class="nombre-seccion-mobil">
+            <div class="center-vert">
+              <img src="img/materna.png">
+              <p>Salud Materno-Infantil</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="sec_ninez" class="row container-fluid" onclick="cat_mob_pdf(this)">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <div id="nom_ninez-mobil" class="nombre-seccion-mobil">
+            <div class="center-vert">
+              <img src="img/ninez.png">
+              <p>Enfermedades de la Niñez</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="sec_infecciosas" class="row container-fluid" onclick="cat_mob_pdf(this)">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <div id="nom_infecciosas-mobil" class="nombre-seccion-mobil">
+            <div class="center-vert">
+              <img src="img/infecciosas.png">
+              <p>Enfermedades Infecciosas Frecuentes</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="section-cronicas" class="container" >
+      <div class="container-fluid row">
+        <div class="subseccion">
+          <a href="seccion-catalogo.html?seccion=cronicas">
+            <div id="nom_cronicas" class="nombre-seccion">
+              <div class="center-vert">
+                <img src="img/cronicas.png">
+                <p>Enfermedades Crónicas</p>
+              </div>
+            </div>
+          </a>
+          <div class="contenedor-pdfs">
+            <div id="carousel-example-generic5" data-interval="false" class="carousel slide carousel-size" data-ride="carousel">
+              <!-- Wrapper for slides -->
+              <div class="carousel-inner carousel-inner-cronicas carousel-inner-cronicas" role="listbox" id="cronicas-cont">
+                <div class="item active">
+                  <div class="pdf-prev">
+                    <img src="img/cargando.gif" style="width:60px;margin-right:0px;margin-top:100px" id="cargando-login">
+                  </div>
+                  <div class="pdf-prev">
+                    <img src="img/cargando.gif" style="width:60px;margin-right:0px;margin-top:100px" id="cargando-login">
+                  </div>
+                  <div class="pdf-prev">
+                    <img src="img/cargando.gif" style="width:60px;margin-right:0px;margin-top:100px" id="cargando-login">
+                  </div>
+                  <div class="pdf-prev">
+                    <img src="img/cargando.gif" style="width:60px;margin-right:0px;margin-top:100px" id="cargando-login">
+                  </div>
+                </div>
+                <div class="item" id="prueba-cont-1">
+                  <div class="pdf-prev">
+                    <img src="img/cargando.gif" style="width:60px;margin-right:0px;margin-top:100px" id="cargando-login">
+                  </div>
+                </div>
+              </div>
+              <div>
+                <ol id="carr_gene_sup1" class="carousel-indicators">
+                  
+                </ol>
+              </div>
+              <!-- Controls -->
+              <div>
+                <a id="prev_btn5" class="left carousel-control" href="#carousel-example-generic5" role="button" data-slide="prev">
+                <img src="img/flecha.png" width="26px" height="26px" class="flecha-carousel-left">
+                <span class="sr-only">Next</span>
+                <span class="sr-only">Previous</span>
+                </a>
+              </div>  
+              <div>
+                <a id="next_btn5" class="right carousel-control" href="#carousel-example-generic5" role="button" data-slide="next">
+                <img src="img/flecha.png" width="26px" height="26px" class="flecha-carousel">
+                <span class="sr-only">Next</span>
+                </a>
+              </div>
+            </div>
+            <!-- <div class="pdf-prev">
+              <div class="img-pdf-prev"></div>
+              <button class="btn btn-warning btn-consulta-pdf">Consultar</button>
+              <p class="pdf-para">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+            </div> -->
+          </div>
+          <div id="chevron-right" class="chevron-pdf-list"></div>
+        </div>
+      </div>
+    </section>
+    <section id="section-materna" class="container">
+      <div class="container-fluid row">
+        <div class="subseccion">
+          <a href="seccion-catalogo.html?seccion=materna">
+            <div id="nom_materna" class="nombre-seccion">
+              <div class="center-vert">
+                <img src="img/materna.png">
+                <p>Salud Materno-Infantil</p>
+              </div>
+            </div>
+          </a>
+          <div id="chevron-left" class="chevron-pdf-list"></div>
+          <div id="prueba-cont" class="contenedor-pdfs">
+            <div id="carousel-example-generic1" data-interval="false" class="carousel slide carousel-size" data-ride="carousel">
+              <!-- Wrapper for slides -->
+              <div class="carousel-inner carousel-inner-materno" role="listbox" id="materno-cont">
+                <div class="item active" id="prueba-cont2">
+                  <div class="pdf-prev">
+                    <img src="img/cargando.gif" style="width:60px;margin-right:0px;margin-top:100px" id="cargando-login">
+                  </div>
+                  <div class="pdf-prev">
+                    <img src="img/cargando.gif" style="width:60px;margin-right:0px;margin-top:100px" id="cargando-login">
+                  </div>
+                  <div class="pdf-prev">
+                    <img src="img/cargando.gif" style="width:60px;margin-right:0px;margin-top:100px" id="cargando-login">
+                  </div>
+                  <div class="pdf-prev">
+                    <img src="img/cargando.gif" style="width:60px;margin-right:0px;margin-top:100px" id="cargando-login">
+                  </div>
+                </div>
+                <div class="item" id="prueba-cont-2">
+                  <div class="pdf-prev">
+                    <img src="img/cargando.gif" style="width:60px;margin-right:0px;margin-top:100px" id="cargando-login">
+                  </div>
+                </div>
+              </div>
+              <div>
+                <ol id="carr_gene_sup2" class="carousel-indicators">
+                  
+                </ol>
+              </div>
+              <!-- Controls -->
+              <div>
+                <a id="prev_btn1" class="left carousel-control" href="#carousel-example-generic1" role="button" data-slide="prev">
+                <img src="img/flecha.png" width="26px" height="26px" class="flecha-carousel-left">
+                <span class="sr-only">Next</span>
+                <span class="sr-only">Previous</span>
+                </a>
+              </div>  
+              <div>
+                <a id="next_btn1" class="right carousel-control" href="#carousel-example-generic1" role="button" data-slide="next">
+                <img src="img/flecha.png" width="26px" height="26px" class="flecha-carousel">
+                <span class="sr-only">Next</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div id="chevron-right" class="chevron-pdf-list"></div>
+        </div>
+      </div>
+    </section>
+    <section id="section-ninez" class="container">
+      <div class="container-fluid row">
+        <div class="subseccion">
+          <a href="seccion-catalogo.html?seccion=ninez">
+            <div id="nom_ninez" class="nombre-seccion">
+              <div class="center-vert">
+                <img src="img/ninez.png">
+                <p>Enfermedades de la Niñez</p>
+              </div>
+            </div>
+          </a>
+          <div id="chevron-left" class="chevron-pdf-list"></div>
+          <div class="contenedor-pdfs">
+            <div id="carousel-example-generic3" data-interval="false" class="carousel slide carousel-size" data-ride="carousel">
+              <!-- Wrapper for slides -->
+              <div class="carousel-inner carousel-inner-ninez" role="listbox" id="ninez-cont">
+                <div class="item active" id="prueba-cont">
+                  <div class="pdf-prev">
+                    <img src="img/cargando.gif" style="width:60px;margin-right:0px;margin-top:100px" id="cargando-login">
+                  </div>
+                  <div class="pdf-prev">
+                    <img src="img/cargando.gif" style="width:60px;margin-right:0px;margin-top:100px" id="cargando-login">
+                  </div>
+                  <div class="pdf-prev">
+                    <img src="img/cargando.gif" style="width:60px;margin-right:0px;margin-top:100px" id="cargando-login">
+                  </div>
+                  <div class="pdf-prev">
+                    <img src="img/cargando.gif" style="width:60px;margin-right:0px;margin-top:100px" id="cargando-login">
+                  </div>
+                </div>
+                <div class="item" id="prueba-cont-3">
+                  <div class="pdf-prev">
+                    <img src="img/cargando.gif" style="width:60px;margin-right:0px;margin-top:100px" id="cargando-login">
+                  </div>
+                </div>
+              </div>
+              <div>
+                <ol id="carr_gene_sup3" class="carousel-indicators">
+                  
+                </ol>
+              </div>
+              <!-- Controls -->
+              <div>
+                <a id="prev_btn3" class="left carousel-control" href="#carousel-example-generic3" role="button" data-slide="prev">
+                <img src="img/flecha.png" width="26px" height="26px" class="flecha-carousel-left">
+                <span class="sr-only">Next</span>
+                <span class="sr-only">Previous</span>
+                </a>
+              </div>  
+              <div>
+                <a id="next_btn3" class="right carousel-control" href="#carousel-example-generic3" role="button" data-slide="next">
+                <img src="img/flecha.png" width="26px" height="26px" class="flecha-carousel">
+                <span class="sr-only">Next</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div id="chevron-right" class="chevron-pdf-list"></div>
+        </div>
+      </div>
+    </section>
+    <section id="section-infecciosas" class="container">
+      <div class="container-fluid row">
+        <div class="subseccion">
+          <a href="seccion-catalogo.html?seccion=infecciosas">
+            <div id="nom_infecciosas" class="nombre-seccion">
+              <div class="center-vert">
+                <img src="img/infecciosas.png">
+                <p>Enfermedades Infecciosas Frecuentes</p>
+              </div>
+            </div>
+          </a>
+          <div id="chevron-left" class="chevron-pdf-list"></div>
+          <div id="prueba-cont" class="contenedor-pdfs">
+            <div id="carousel-example-generic4" data-interval="false" class="carousel slide carousel-size" data-ride="carousel">
+              <!-- Wrapper for slides -->
+              <div class="carousel-inner carousel-inner-infecciosas" role="listbox" id="infecciosas-cont">
+                <div class="item active" id="prueba-cont">
+                  <div class="pdf-prev">
+                    <img src="img/cargando.gif" style="width:60px;margin-right:0px;margin-top:100px" id="cargando-login">
+                  </div>
+                  <div class="pdf-prev">
+                    <img src="img/cargando.gif" style="width:60px;margin-right:0px;margin-top:100px" id="cargando-login">
+                  </div>
+                  <div class="pdf-prev">
+                    <img src="img/cargando.gif" style="width:60px;margin-right:0px;margin-top:100px" id="cargando-login">
+                  </div>
+                  <div class="pdf-prev">
+                    <img src="img/cargando.gif" style="width:60px;margin-right:0px;margin-top:100px" id="cargando-login">
+                  </div>
+                </div>
+                <div class="item" id="prueba-cont-4">
+                  <div class="pdf-prev">
+                    <img src="img/cargando.gif" style="width:60px;margin-right:0px;margin-top:100px" id="cargando-login">
+                  </div>
+                </div>
+              </div>
+              <div>
+                <ol id="carr_gene_sup4" class="carousel-indicators">
+                  
+                </ol>
+              </div>
+              <!-- Controls -->
+              <div>
+                <a id="prev_btn4" class="left carousel-control" href="#carousel-example-generic4" role="button" data-slide="prev">
+                <img src="img/flecha.png" width="26px" height="26px" class="flecha-carousel-left">
+                <span class="sr-only">Next</span>
+                <span class="sr-only">Previous</span>
+                </a>
+              </div>  
+              <div>
+                <a id="next_btn4" class="right carousel-control" href="#carousel-example-generic4" role="button" data-slide="next">
+                <img src="img/flecha.png" width="26px" height="26px" class="flecha-carousel">
+                <span class="sr-only">Next</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div id="chevron-right" class="chevron-pdf-list"></div>
+        </div>
+      </div>
+    </section> 
+    <!-- <section id="section-cronicas-mob">
+      <div id="nom_cronicas" class="nombre-seccion">
+        <div class="center-vert">
+          <img src="img/cronicas.png">
+          <p>Enfermedades Crónicas</p>
+        </div>
+      </div>
+    </section> -->
+    <section id="mas-visitados-one" class="container">
+      <div class="row container-fluid">
+        <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
+          <hr>
+          <div id="calc-list" class="col-md-5 col-sm-4 col-xs-12">
+            <p>Calculadoras de Salud</p>
+            <ul style="float:left">
+              <a href="imc.html"><li>Calculadora de índice de Masa Corporal</li></a>
+              <a href="cardio.html"><li>Calculadora de riesgo cardiovascular</li></a>
+              <a href="renal.html"><li>Calculadora de función renal</li></a>
+              <a href="calorico.html"><li>Calculadora de gasto calórico</li></a>
+              <a href="vacunacion.html"><li>Esquema de Vacunación</li></a>
+              <a href="actividad.html"><li>Calculadora de actividad física</li></a>
+            </ul>
+          </div>
+          <div id="calc-list-mob">
+            <p>Calculadoras de Salud</p>
+            <a href="actividad.html"><div class="list-mob-el btn-primary btn-cal-fisica">Calculadora de actividad física</div></a>
+            <a href="calorico.html"><div class="list-mob-el btn-primary btn-cal-calorico">Calculadora de gasto calórico</div></a>
+            <a href="renal.html"><div class="list-mob-el btn-primary btn-cal-masa">Calculadora de índice de masa corporal (IMC)</div></a>
+            <a href="cardio.html"><div class="list-mob-el btn-primary btn-cal-riesgo">Calculadora de riesgo cardiovascular</div></a>
+            <a href="renal.html"><div class="list-mob-el btn-primary btn-cal-renal">Calculadora de función renal</div></a>
+          </div>
+          <div class="visitados">
+            <p>Más Visitados</p>
+            <div id="mv-txt1">
+            </div>
+            <div id="mv-txt2">
+            </div>
+            <div id="mv-txt3">
+            </div>
+            <script type="text/javascript">
+              most_visited();
+            </script>
+          </div>
+        </div>
+      </div>
+    </section> 
+	<footer>
+			<div  class="container" style="width:430px; height:50px;">
+                
+				<a href="http://www.fundacioncarlosslim.org/"><div id="logo-foot"><img src="img/logo-black.png"></div></a>
+				<a href="http://www.fundacioncarlosslim.org/"><div id="logo-foot-mob"><img src="img/logo-black.png"></div></a>
+			</div>
+		</footer>
+		<div class="bottom-line-right">
+			<p>Aviso de privacidad</p>
+		</div>
+		<div class="bottom-line">
+			<div id="aviso-priv" onclick="loadPrivacy()"><img style="max-width:22px;" src="img/aviso.png">&nbsp;Aviso de privacidad</div>
+		</div>
+
+      <div id="lowRisk" style="display:none">
+        Actividad física con bajo riesgo
+      </div>
+
+      <div id="highRisk" style="display:none">
+        Actividad física con alto riesgo. Realizar pruebas médicas antes de prescribir actividad física.
+      </div>
+
+      <div id="dialog_content" class="dialog_content" style="display:none;">
+        <div class="dialogModal_header">Descargar ahora <font class="blueModalTitle">Portafolio Digital</font> en el Móvil y USB. Es gratis.</div>
+        <div class="dialogModal_content">
+        <img src="img/downloadAppModal.jpg" style="width:100%;">
+        <a href="https://play.google.com/store/apps/details?id=com.icom.portafoliosalud&hl=es_419" target="_blank"><div style="width: 165px; position: relative; z-index: 50;bottom: 237px;left: 61%;height: 50px;background-color: transparent;cursor: pointer;"></div></a><a href="http://icom-systems.com/portafolio-digital/entrega9Dic/dist_091215.zip" target="_blank"><div style="width: 165px; position: relative; z-index: 50;bottom: 180px;left: 61%;height: 50px;background-color: transparent;cursor: pointer;"></div></a>
+        </div>
+        <!--<div class="dialogModal_footer">
+          <button type="button" class="btn btn-primary" data-dialogmodal-but="next">Next</button>
+          <button type="button" class="btn btn-default" data-dialogmodal-but="cancel">Cancel</button>
+        </div>-->
+      </div>
+
+      <div id="dialog_content2" class="dialog_content2" style="display:none;">
+        <div class="dialogModal_header">Sobre la información de <font class="blueModalTitle">medicamentos</font> en el  <font class="blueModalTitle">VADEMECUN</font>  del Portafolio Digital de la FCS</div>
+        <div class="dialogModal_content" style="margin:10px;">
+          <div style="padding-top:50px;">La FCS establece que las recomendaciones que se proporcionan en esta aplicación son de carácter informativo  y <font class="blueModalTitle">no substituyen</font> de ninguna manera las recomendaciones médicas y/o un especialista en la materia. El uso que se haga de esta aplicación <font class="blueModalTitle">es responsabilidad exclusiva del usuario.</div><div style="padding-top:15px;"></font> La base de datos de medicamentos se actualiza periódicamente con el objeto de recoger las últimas modificaciones y novedades habidas e integradas por parte del equipo proveedor. La FCS no tiene ningún fin comercial por lo que <font class="blueModalTitle">NO recomienda marca</font> alguna.</div>
+          <div align="center" style="padding-top:50px;padding-bottom:50px;"><button onclick="send2vademecum()" class="calc-btn-send">Aceptar</button></div>
+        </div>
+        <!--<div class="dialogModal_footer">
+          <button type="button" class="btn btn-primary" data-dialogmodal-but="next">Next</button>
+          <button type="button" class="btn btn-default" data-dialogmodal-but="cancel">Cancel</button>
+        </div>-->
+      </div>
+
+      <div id="dialog_content3" class="dialog_content3" style="display:none;">
+        <div class="dialogModal_header">AVISO DE PRIVACIDAD</div>
+        <div class="dialogModal_content" style="margin:10px;">
+          <div style="padding-top:50px;">Aviso dirigido a los titulares de datos personales que obran en posesión de la Fundación Carlos Slim, A.C. 
+Fundación Carlos Slim, A.C. (en lo sucesivo la “Fundación”), con domicilio en calle Lago Zurich No. 245, Edificio Presa Falcón, Piso 20, Colonia Granada Ampliación, Delegación Miguel Hidalgo, C.P. 11529, en México, Distrito Federal, hace de su conocimiento que los datos personales de usted, incluyendo los sensibles, que actualmente o en el futuro obren en nuestras bases de datos, serán tratados y/o utilizados por la Iniciativa de capacitación y/o por aquellos terceros que, por la naturaleza de sus trabajos o funciones tengan la necesidad de tratar y/o utilizar sus datos personales; con el propósito de i) cumplir con aquellas obligaciones que se derivan de la relación jurídica existente entre usted como titular de los datos personales y la Iniciativa de capacitación, ii) utilizar y/o tratar sus datos personales con fines estadísticos, iii) utilizar y/o tratar sus datos personales con fines publicitarios y de fomento, promoción y difusión de acciones sociales, iv) difundir, comunicar y/o publicar sus datos personales en cualquier medio de comunicación electrónico, v) utilizar sus datos personales como base de referencia, y vi) enviarle a su domicilio invitaciones a eventos organizados por la Iniciativa de capacitación. 
+La “Fundación” podrá transferir los datos personales que obren en sus bases de datos a terceras personas, nacionales o extranjeras, como pudieran ser de manera enunciativa: Asociaciones Civiles, Instituciones de Asistencia Privada, Organismos Descentralizados, Instituciones de Crédito y Hospitales Públicos y/o Privados, salvo que los titulares respectivos manifiesten expresamente su oposición, en términos de lo dispuesto por la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (la Ley). 
+Los titulares podrán ejercer sus derechos de acceso, rectificación, cancelación u oposición y la revocación del consentimiento a partir del 6 de enero de 2012, mediante el envío de una solicitud a la siguiente dirección electrónica dg@fundacioncarlosslim.org Todas las solicitudes que sean enviadas al Instituto, independiente del medio utilizado por los titulares, deberán: 
+Incluir el nombre del titular y domicilio u otro medio para comunicarle la respuesta a su solicitud. 
+Acompañar los documentos oficiales que acrediten la identidad del titular. 
+Incluir una descripción clara y precisa de los datos personales respecto de los cuales ejercitará los derechos que les confiere la Ley. 
+Incluir cualquier elemento o documento que facilite la localización de los datos personales de que se traten. 
+La “Fundación” tendrá el derecho de cambiar, modificar, complementar y/o alterar el presente aviso, en cualquier momento, en cuyo caso se hará de su conocimiento a través de su publicación en la siguiente página web: fundacioncarlosslim.org
+
+        </div>
+        <!--<div class="dialogModal_footer">
+          <button type="button" class="btn btn-primary" data-dialogmodal-but="next">Next</button>
+          <button type="button" class="btn btn-default" data-dialogmodal-but="cancel">Cancel</button>
+        </div>-->
+      </div>
+
+
+    <script src="js/popModal.js"></script>
+
+  </body>
+</html>

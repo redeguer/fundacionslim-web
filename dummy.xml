@@ -1,0 +1,258 @@
+<medicamentos>
+  <medicina category="cat_1">
+    <id>1</id>
+    <reactivo>3-A OFTENO</reactivo>
+    <nombre lang="en">Tratamiento de hipotensión arterial SOLUCIÓN GOTAS</nombre>
+    <cellfin>CHINOIN</cellfin>
+    <indi>A EVALUAR</indi>
+    <price>30.00</price>
+  </medicina>
+  <medicina category="cat_2">
+    <id>2</id>
+    <reactivo>A GRIN</reactivo>
+    <nombre lang="en">Tratamiento de hipotensión arterial SOLUCIÓN GOTAS</nombre>
+    <cellfin>SANFER</cellfin>
+    <indi>A JUICIO DEL MEDICO</indi>
+    <price>29.99</price>
+  </medicina>
+  <medicina category="cat_3">
+    <id>3</id>
+    <reactivo>A MIGNOBIS</reactivo>
+    <nombre lang="en">Tratamiento de la esteatosis hepática</nombre>
+    <cellfin>HORMONA</cellfin>
+    <indi>PROHIBIDO</indi>
+    <price>49.99</price>
+  </medicina>
+  <medicina category="cat_3" cover="paperback">
+    <id>4</id>
+    <reactivo>A.S. COR</reactivo>
+    <nombre lang="en">Tratamiento para el dolor y la fiebre TABLETAS</nombre>
+    <cellfin>SANOFI</cellfin>
+    <indi>PROHIBIDO</indi>
+    <price>39.95</price>
+  </medicina>
+  <medicina category="cat_1">
+    <id>5</id>
+    <reactivo>3-A OFTENO</reactivo>
+    <nombre lang="en">Tratamiento de hipotensión arterial SOLUCIÓN GOTAS</nombre>
+    <cellfin>CHINOIN</cellfin>
+    <indi>A EVALUAR</indi>
+    <price>30.00</price>
+  </medicina>
+  <medicina category="cat_2">
+    <id>6</id>
+    <reactivo>A GRIN</reactivo>
+    <nombre lang="en">Tratamiento de hipotensión arterial SOLUCIÓN GOTAS</nombre>
+    <cellfin>SANFER</cellfin>
+    <indi>A JUICIO DEL MEDICO</indi>
+    <price>29.99</price>
+  </medicina>
+  <medicina category="cat_3">
+    <id>7</id>
+    <reactivo>A MIGNOBIS</reactivo>
+    <nombre lang="en">Tratamiento de la esteatosis hepática</nombre>
+    <cellfin>HORMONA</cellfin>
+    <indi>PROHIBIDO</indi>
+    <price>49.99</price>
+  </medicina>
+  <medicina category="cat_3" cover="paperback">
+    <id>8</id>
+    <reactivo>A.S. COR</reactivo>
+    <nombre lang="en">Tratamiento para el dolor y la fiebre TABLETAS</nombre>
+    <cellfin>SANOFI</cellfin>
+    <indi>PROHIBIDO</indi>
+    <price>39.95</price>
+  </medicina>
+  <medicina category="cat_1">
+    <id>9</id>
+    <reactivo>3-A OFTENO</reactivo>
+    <nombre lang="en">Tratamiento de hipotensión arterial SOLUCIÓN GOTAS</nombre>
+    <cellfin>CHINOIN</cellfin>
+    <indi>A EVALUAR</indi>
+    <price>30.00</price>
+  </medicina>
+  <medicina category="cat_2">
+    <id>10</id>
+    <reactivo>A GRIN</reactivo>
+    <nombre lang="en">Tratamiento de hipotensión arterial SOLUCIÓN GOTAS</nombre>
+    <cellfin>SANFER</cellfin>
+    <indi>A JUICIO DEL MEDICO</indi>
+    <price>29.99</price>
+  </medicina>
+  <medicina category="cat_3">
+    <id>11</id>
+    <reactivo>A MIGNOBIS</reactivo>
+    <nombre lang="en">Tratamiento de la esteatosis hepática</nombre>
+    <cellfin>HORMONA</cellfin>
+    <indi>PROHIBIDO</indi>
+    <price>49.99</price>
+  </medicina>
+  <medicina category="cat_3" cover="paperback">
+    <id>12</id>
+    <reactivo>A.S. COR</reactivo>
+    <nombre lang="en">Tratamiento para el dolor y la fiebre TABLETAS</nombre>
+    <cellfin>SANOFI</cellfin>
+    <indi>PROHIBIDO</indi>
+    <price>39.95</price>
+  </medicina>
+  <medicina category="cat_1">
+    <id>13</id>
+    <reactivo>3-A OFTENO</reactivo>
+    <nombre lang="en">Tratamiento de hipotensión arterial SOLUCIÓN GOTAS</nombre>
+    <cellfin>CHINOIN</cellfin>
+    <indi>A EVALUAR</indi>
+    <price>30.00</price>
+  </medicina>
+  <medicina category="cat_2">
+    <id>14</id>
+    <reactivo>A GRIN</reactivo>
+    <nombre lang="en">Tratamiento de hipotensión arterial SOLUCIÓN GOTAS</nombre>
+    <cellfin>SANFER</cellfin>
+    <indi>A JUICIO DEL MEDICO</indi>
+    <price>29.99</price>
+  </medicina>
+  <medicina category="cat_3">
+    <id>15</id>
+    <reactivo>A MIGNOBIS</reactivo>
+    <nombre lang="en">Tratamiento de la esteatosis hepática</nombre>
+    <cellfin>HORMONA</cellfin>
+    <indi>PROHIBIDO</indi>
+    <price>49.99</price>
+  </medicina>
+  <medicina category="cat_3" cover="paperback">
+    <id>16</id>
+    <reactivo>A.S. COR</reactivo>
+    <nombre lang="en">Tratamiento para el dolor y la fiebre TABLETAS</nombre>
+    <cellfin>SANOFI</cellfin>
+    <indi>PROHIBIDO</indi>
+    <price>39.95</price>
+  </medicina>
+  <medicina category="cat_1">
+    <id>17</id>
+    <reactivo>3-A OFTENO</reactivo>
+    <nombre lang="en">Tratamiento de hipotensión arterial SOLUCIÓN GOTAS</nombre>
+    <cellfin>CHINOIN</cellfin>
+    <indi>A EVALUAR</indi>
+    <price>30.00</price>
+  </medicina>
+  <medicina category="cat_2">
+    <id>18</id>
+    <reactivo>A GRIN</reactivo>
+    <nombre lang="en">Tratamiento de hipotensión arterial SOLUCIÓN GOTAS</nombre>
+    <cellfin>SANFER</cellfin>
+    <indi>A JUICIO DEL MEDICO</indi>
+    <price>29.99</price>
+  </medicina>
+  <medicina category="cat_3">
+    <id>19</id>
+    <reactivo>A MIGNOBIS</reactivo>
+    <nombre lang="en">Tratamiento de la esteatosis hepática</nombre>
+    <cellfin>HORMONA</cellfin>
+    <indi>PROHIBIDO</indi>
+    <price>49.99</price>
+  </medicina>
+  <medicina category="cat_3" cover="paperback">
+    <id>20</id>
+    <reactivo>A.S. COR</reactivo>
+    <nombre lang="en">Tratamiento para el dolor y la fiebre TABLETAS</nombre>
+    <cellfin>SANOFI</cellfin>
+    <indi>PROHIBIDO</indi>
+    <price>39.95</price>
+  </medicina>
+  <medicina category="cat_1">
+    <id>21</id>
+    <reactivo>3-A OFTENO</reactivo>
+    <nombre lang="en">Tratamiento de hipotensión arterial SOLUCIÓN GOTAS</nombre>
+    <cellfin>CHINOIN</cellfin>
+    <indi>A EVALUAR</indi>
+    <price>30.00</price>
+  </medicina>
+  <medicina category="cat_2">
+    <id>22</id>
+    <reactivo>A GRIN</reactivo>
+    <nombre lang="en">Tratamiento de hipotensión arterial SOLUCIÓN GOTAS</nombre>
+    <cellfin>SANFER</cellfin>
+    <indi>A JUICIO DEL MEDICO</indi>
+    <price>29.99</price>
+  </medicina>
+  <medicina category="cat_3">
+    <id>23</id>
+    <reactivo>A MIGNOBIS</reactivo>
+    <nombre lang="en">Tratamiento de la esteatosis hepática</nombre>
+    <cellfin>HORMONA</cellfin>
+    <indi>PROHIBIDO</indi>
+    <price>49.99</price>
+  </medicina>
+  <medicina category="cat_3" cover="paperback">
+    <id>24</id>
+    <reactivo>A.S. COR</reactivo>
+    <nombre lang="en">Tratamiento para el dolor y la fiebre TABLETAS</nombre>
+    <cellfin>SANOFI</cellfin>
+    <indi>PROHIBIDO</indi>
+    <price>39.95</price>
+  </medicina>
+  <medicina category="cat_1">
+    <id>25</id>
+    <reactivo>3-A OFTENO</reactivo>
+    <nombre lang="en">Tratamiento de hipotensión arterial SOLUCIÓN GOTAS</nombre>
+    <cellfin>CHINOIN</cellfin>
+    <indi>A EVALUAR</indi>
+    <price>30.00</price>
+  </medicina>
+  <medicina category="cat_2">
+    <id>26</id>
+    <reactivo>A GRIN</reactivo>
+    <nombre lang="en">Tratamiento de hipotensión arterial SOLUCIÓN GOTAS</nombre>
+    <cellfin>SANFER</cellfin>
+    <indi>A JUICIO DEL MEDICO</indi>
+    <price>29.99</price>
+  </medicina>
+  <medicina category="cat_3">
+    <id>27</id>
+    <reactivo>A MIGNOBIS</reactivo>
+    <nombre lang="en">Tratamiento de la esteatosis hepática</nombre>
+    <cellfin>HORMONA</cellfin>
+    <indi>PROHIBIDO</indi>
+    <price>49.99</price>
+  </medicina>
+  <medicina category="cat_3" cover="paperback">
+    <id>28</id>
+    <reactivo>A.S. COR</reactivo>
+    <nombre lang="en">Tratamiento para el dolor y la fiebre TABLETAS</nombre>
+    <cellfin>SANOFI</cellfin>
+    <indi>PROHIBIDO</indi>
+    <price>39.95</price>
+  </medicina>
+  <medicina category="cat_1">
+    <id>29</id>
+    <reactivo>3-A OFTENO</reactivo>
+    <nombre lang="en">Tratamiento de hipotensión arterial SOLUCIÓN GOTAS</nombre>
+    <cellfin>CHINOIN</cellfin>
+    <indi>A EVALUAR</indi>
+    <price>30.00</price>
+  </medicina>
+  <medicina category="cat_2">
+    <id>30</id>
+    <reactivo>A GRIN</reactivo>
+    <nombre lang="en">Tratamiento de hipotensión arterial SOLUCIÓN GOTAS</nombre>
+    <cellfin>SANFER</cellfin>
+    <indi>A JUICIO DEL MEDICO</indi>
+    <price>29.99</price>
+  </medicina>
+  <medicina category="cat_3">
+    <id>31</id>
+    <reactivo>A MIGNOBIS</reactivo>
+    <nombre lang="en">Tratamiento de la esteatosis hepática</nombre>
+    <cellfin>HORMONA</cellfin>
+    <indi>PROHIBIDO</indi>
+    <price>49.99</price>
+  </medicina>
+  <medicina category="cat_3" cover="paperback">
+    <id>32</id>
+    <reactivo>A.S. COR</reactivo>
+    <nombre lang="en">Tratamiento para el dolor y la fiebre TABLETAS</nombre>
+    <cellfin>SANOFI</cellfin>
+    <indi>PROHIBIDO</indi>
+    <price>39.95</price>
+  </medicina>
+</medicamentos>
