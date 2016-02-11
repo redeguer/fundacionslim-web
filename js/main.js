@@ -1755,7 +1755,7 @@ function menu_noticias(){
 		html="";
 		html += "<div class='row'>";
 			html += "<div class='col-md-2 col-sm-2'>";
-				html += "<img src='"+info[0].ImageUrl+"' class='img-rounded'>";
+				html += "<img src='img/noticia3.png' class='img-rounded'>";
 			html += "</div>";
 			html += "<div class='col-md-4 col-sm-4'>";
 				html += "<div class='texto-noticia'>";
