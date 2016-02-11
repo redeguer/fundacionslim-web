@@ -139,90 +139,101 @@
     </div> -->
     <div class="col-md-12" style="padding-top: 300px;">
 	<?php if (!isset($new)){ ?>
-	<?php }else {?>
-	<?php }?>
-      <div id="all-news">
-        <div id="primera_seccion">
-          <div class="noticia-prev">
-            <img src="img/cargando.gif" style="width:50px;float:right;margin-right:43%;margin-top: 130px">
-          </div>
-          <div class="noticia-prev">
-            <img src="img/cargando.gif" style="width:50px;float:right;margin-right:43%;margin-top: 130px">
-          </div>
-          <div class="noticia-prev">
-            <img src="img/cargando.gif" style="width:50px;float:right;margin-right:43%;margin-top: 130px">
-          </div>
-          <div class="noticia-prev">
-            <img src="img/cargando.gif" style="width:50px;float:right;margin-right:43%;margin-top: 130px">
-          </div>
-          <div class="noticia-prev">
-            <img src="img/cargando.gif" style="width:50px;float:right;margin-right:43%;margin-top: 130px">
-          </div>
-          <div class="noticia-prev">
-            <img src="img/cargando.gif" style="width:50px;float:right;margin-right:43%;margin-top: 130px">
-          </div>
-        </div>
-        <div id="dem_news">
-          <div id="news_block_1" class="new_sec_all">
-            <div class="noticia-prev">
-              <div class="img-noticia-prev"></div>
-              <p class="noticia-para">noticias, seccion 2</p>
+	
+      <section id="slider-practicas-one" class="container">
+      <div class="row">
+        <div id="carousel" class="carousel slide col-md-12" data-ride="">
+          <ol class="carousel-indicators" style="margin-bottom: 40px;">
+            <li data-target="#carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel" data-slide-to="1"></li>
+            <li data-target="#carousel" data-slide-to="2"></li>
+            <li data-target="#carousel" data-slide-to="3"></li>
+          </ol>
+          <div class="carousel-inner" role="listbox" id="carousel-practicas-head">
+            <div class="item active" id="item_active_jake" style="margin-top:20px; padding-left:0px;">
+              
+              <div class="row" style="margin-left:350px;" id="news01">
+                <div style="text-align:center" class="img-slider col-md-1 col-md-offset-0 col-lg-1 col-lg-6 col-lg-offset-0">
+                    <div class="pdf-prev" style="width:250px; height:280px !important">
+                        <div style="background-image:url(img/carruselCientif.png)" class="img-pdf-prev-car"><img class="img_carr_sec" src="img/infecciosas.png"></div>
+                        <p class="pdf-para-carr">Las bacterias intestinales y el desarrollo del sistema inmune en la infancia</p>
+                    </div>
+                </div>
+                <div class="txt-slider col-sm-9 col-md-10 col-md-offset-1 col-lg-offset-2">
+                    <h3>Las bacterias intestinales y el desarrollo del sistema inmune en la infancia</h3>
+                    <p>El sistema inmune de los lactantes está activamente reprimido durante el embarazo y por lo tanto requiere de estímulos desde los primeros meses de vida; esto deberá mantenerse hasta lograr la madurez del sistema, aproximadamente a los cinco años de edad; lo anterior le representa al infante un período de extraordinaria susceptibilidad a infecciones.</p>
+                    
+                    <a href="pdfs/BCT-4-2013.pdf" target="_blank">
+                        <button class="btn btn-descarga">Descargar</button>
+                    </a>
+                </div>
+              </div>
+
             </div>
-            <div class="noticia-prev">
-              <div class="img-noticia-prev"></div>
-              <p class="noticia-para">noticias, seccion 2</p>
+
+            <div class="item" id="" style="margin-top:20px; padding-left:0px;">
+              <div class="row" style="margin-left:350px;" id="news02">
+                <div style="text-align:center" class="img-slider col-md-1 col-md-offset-0 col-lg-1 col-lg-6 col-lg-offset-0">
+                    <div class="pdf-prev" style="width:250px; height:270px !important">
+                        <div style="background-image:url(img/carruselCientif.png)" class="img-pdf-prev-car"><img class="img_carr_sec" src="img/infecciosas.png"></div>
+                        <p class="pdf-para-carr">Los donadores para el transplante de células progenitoras hematopoyéticas</p>
+                    </div>
+                </div>
+                <div class="txt-slider col-sm-9 col-md-10 col-md-offset-1 col-lg-offset-2">
+				
+                    <h3>Los donadores para el transplante de células progenitoras hematopoyéticas</h3>
+                    <p>madamente a los cinco años de edad; lo anterior le representa al infante un período de extraordinaria susceptibilidad a infecciones.</p>
+                    
+                    <a href="pdfs/BCT-2-2015.pdf" target="_blank">
+                        <button class="btn btn-descarga">Descargar</button>
+                    </a>
+                </div>
+              </div>
             </div>
-            <div class="noticia-prev">
-              <div class="img-noticia-prev"></div>
-              <p class="noticia-para">noticias, seccion 2</p>
+
+            <div class="item" id="" style="margin-top:20px; padding-left:0px;">
+              <div class="row" style="margin-left:350px; " id="news03">
+                <div style="text-align:center" class="img-slider col-md-1 col-md-offset-0 col-lg-1 col-lg-6 col-lg-offset-0">
+                    <div class="pdf-prev" style="width:250px; height:270px !important">
+                        <div style="background-image:url(img/carruselDiabetes.png)" class="img-pdf-prev-car"><img class="img_carr_sec" src="img/infecciosas.png"></div>
+                        <p class="pdf-para-carr">Hipertensión</p>
+                    </div>
+                </div>
+                <div class="txt-slider col-sm-9 col-md-10 col-md-offset-1 col-lg-offset-2">
+                    <h3>Hipertensión</h3>
+                    <p>El sistema inmune de los lactantes está activamente reprimido durante el embarazo y por lo tanto requiere de estímulos desde los primeros meses de vida; esto deberá mantenerse hasta lograr la madurez del sistema, aproximadamente a los cinco años de edad; lo anterior le representa al infante un período de extraordinaria susceptibilidad a infecciones.</p>
+                    
+                    <a href="pdfs/HIPERTENSION.pdf" target="_blank">
+                        <button class="btn btn-descarga">Descargar</button>
+                    </a>
+                </div>
+              </div>
             </div>
-            <div class="noticia-prev">
-              <div class="img-noticia-prev"></div>
-              <p class="noticia-para">noticias, seccion 2</p>
-            </div>
-            <div class="noticia-prev">
-              <div class="img-noticia-prev"></div>
-              <p class="noticia-para">noticias, seccion 2</p>
-            </div>
-            <div class="noticia-prev">
-              <div class="img-noticia-prev"></div>
-              <p class="noticia-para">noticias, seccion 2</p>
-            </div>
-          </div>
-          <div id="news_block_2" class="new_sec_all">
-            <div class="noticia-prev">
-              <div class="img-noticia-prev"></div>
-              <p class="noticia-para">noticias, seccion 2</p>
-            </div>
-            <div class="noticia-prev">
-              <div class="img-noticia-prev"></div>
-              <p class="noticia-para">noticias, seccion 2</p>
-            </div>
-            <div class="noticia-prev">
-              <div class="img-noticia-prev"></div>
-              <p class="noticia-para">noticias, seccion 2</p>
-            </div>
-            <div class="noticia-prev">
-              <div class="img-noticia-prev"></div>
-              <p class="noticia-para">noticias, seccion 2</p>
-            </div>
-            <div class="noticia-prev">
-              <div class="img-noticia-prev"></div>
-              <p class="noticia-para">noticias, seccion 2</p>
-            </div>
-            <div class="noticia-prev">
-              <div class="img-noticia-prev"></div>
-              <p class="noticia-para">noticias, seccion 2</p>
+
+            <div class="item" id="" style="margin-top:20px; padding-left:0px;">
+              <div class="row" style="margin-left:350px; " id="news04">
+                <div style="text-align:center" class="img-slider col-md-1 col-md-offset-0 col-lg-1 col-lg-6 col-lg-offset-0">
+                    <div class="pdf-prev" style="width:250px; height:270px !important">
+                        <div style="background-image:url(img/carruselDiabetes.png)" class="img-pdf-prev-car"><img class="img_carr_sec" src="img/infecciosas.png"></div>
+                        <p class="pdf-para-carr">Diabetes</p>
+                    </div>
+                </div>
+                <div class="txt-slider col-sm-9 col-md-10 col-md-offset-1 col-lg-offset-2">
+                    <h3>Diabetes</h3>
+                    <p>El sistema inmune de los lactantes está activamente reprimido durante el embarazo y por lo tanto requiere de estímulos desde los primeros meses de vida; esto deberá mantenerse hasta lograr la madurez del sistema, aproximadamente a los cinco años de edad; lo anterior le representa al infante un período de extraordinaria susceptibilidad a infecciones.</p>
+                    
+                    <a href="pdfs/Diabetes.pdf" target="_blank">
+                        <button class="btn btn-descarga">Descargar</button>
+                    </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="container">
-      <div id="btn_noticias_id_all" class="btn_noticias_sec_all" onclick="muestra_noticias()" style="margin-bottom: 0px"><i>Más Noticias...</i></div>
-      <div id="btn_noticias_id_ant" class="btn_noticias_sec_ant" onclick="noticias(1,100,'ASC',1)" style="margin-bottom: 0px"><i>...Noticias más antiguas</i></div>
-      <div id="btn_noticias_id_act" class="btn_noticias_sec_ant" onclick="noticias(1,100,'DESC',0)" style="margin-bottom: 0px"><i>...Noticias más actuales</i></div>
-    </div>
+    </section>
+	<?php }else {?>
+	<?php }?>
     
     <div id="noticia_indi_mobil">
       <div class='container' style=' margin-top: 30px;'>

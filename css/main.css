@@ -1604,6 +1604,14 @@ footer{
 	
 }
 
+@media (min-width: 992px){
+	.txt-slider p{
+		height: 60px;
+		overflow: hidden;
+	}
+	
+}
+
 @media(max-width: 1000px){
 	.pdf_controls_components{
 		margin-top : 280px !important;

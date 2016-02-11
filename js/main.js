@@ -1761,7 +1761,7 @@ function menu_noticias(){
 				html += "<div class='texto-noticia'>";
 					html += "<h5>"+info[0].Title+"</h5>";
 					html += "<p id='txt-n1' class='hidden-text'>"+info[0].Teaser+"</p>";
-					html += "<a href='noticias.php?new="+info[0].ID+"&img="+info[0].ImageUrl+"&title="+info[0].Title+"&teaser="+info[0].Teaser+"'><button class='btn btn-primary'>Ver noticia</button></a>";
+					html += "<a href='noticias.php?"+"&img="+info[0].ImageUrl+"&title="+info[0].Title+"&teaser="+info[0].Teaser+"'><button class='btn btn-primary'>Ver más...</button></a>";
 					html += "<a href='https://twitter.com/Fund_CarlosSlim' target='_blank'><div class='sn-ind sn-tws'></div></a>";
 					html += "<a href='https://www.facebook.com/FundacionCarlosSlim' target='_blank'><div class='sn-ind sn-fbs'></div></a>";
 				html += "</div>";
@@ -1773,7 +1773,7 @@ function menu_noticias(){
 				html += "<div class='texto-noticia'>";
 					html += "<h5>"+info[1].Title+"</h5>";
 					html += "<p class='hidden-text'>"+info[1].Teaser+"</p>";
-					html += "<a href='noticias.php?new="+info[1].ID+"&img="+info[1].ImageUrl+"&title="+info[1].Title+"&teaser="+info[1].Teaser+"'><button class='btn btn-primary'>Ver noticia</button></a>";
+					html += "<a href='actualidadEnSalud.php?"+"&img="+info[1].ImageUrl+"&title="+info[1].Title+"&teaser="+info[1].Teaser+"'><button class='btn btn-primary'>Ver más...</button></a>";
 					html += "<a href='https://twitter.com/Fund_CarlosSlim' target='_blank'><div class='sn-ind sn-tws'></div></a>";
 					html += "<a href='https://www.facebook.com/FundacionCarlosSlim' target='_blank'><div class='sn-ind sn-fbs'></div></a>";
 				html += "</div>";
